@@ -1,0 +1,185 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/11/2016, 07:01:21 PM
+    Author     : Yax
+*/
+
+
+/* ==========================================================================
+   Yax's custom styles
+   ========================================================================== */
+@font-face {
+font-family:Hiruko;
+src: url(font/HirukoBlackAlternate.ttf);
+}
+@font-face {
+font-family:Lane;
+src: url(font/HelloAnnie.ttf);
+}
+.color{
+    background: transparent;
+    border: none;
+    border-color: transparent;
+    transition: 0.5s all linear;
+}
+.color.cambia-color {
+    background-color: rgba(211, 84, 0, 1);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(211, 84, 0, 1);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(211, 84, 0, 1);
+    box-shadow: 0px 0px 4px 0px rgba(211, 84, 0, 1);
+}
+.enlaces>li>a{
+	color: white;
+        font-family: Lane;
+        font-size: 23px;
+}
+.enlaces>li>a:hover,
+.enlaces>li>a.hover
+{
+    color: #f1c40f;
+    background-color: transparent;
+}
+.enlaces> li>a:focus,
+.enlaces>li>a.focus{
+    background-color: #f1c40f;
+    color: white;
+    border-radius: 8px;
+    outline: 0px;
+}
+.enlaces> li>a:active,
+.enlaces>li>a.active{
+    background-color: #f1c40f;
+    outline: 0px;
+    color:black;
+}
+
+.hm-icon{
+	background: white;
+}
+.hm-tl{
+	color: black;
+        font-family: Hiruko;
+        font-size: 25px;
+}
+.hm-lk{
+	color: white;
+        font-family: Hiruko;
+        font-size: 23px;
+}
+.hm-lk:hover{
+    color: #f1c40f;
+}
+.error{
+    font-family: Lane;
+    font-size: 20px;
+    color: red; 
+    visibility: hidden;
+}
+.centrado{
+    font-family: Lane;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+a{
+   color:  #f1c40f;
+   text-decoration: none; 
+}
+a:hover{
+    color: #E1B810;
+    text-decoration: none;
+}
+a:focus{
+    color: #E1B810;
+    text-decoration: none;
+    outline: 0;
+}
+.datox>div>div>input{
+    font-size: 20px;
+    color: black;
+}
+.datox>div>div>input:focus{
+    outline: 0px;
+}
+.who{
+    color: black;
+    font-family: Lane;
+    font-size: 25px;
+}
+.colors{
+    background-color: rgba(211, 84, 0, 1);
+    font-size: 25px;
+}
+.creditos{
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+}
+.creditos>div>p{
+    font-family: Hiruko;
+    font-size: 28px;
+}
+.creditosR>a{
+    font-size: 30px;
+    color: whitesmoke;
+    text-align: center;
+    outline: 0;
+    text-decoration: none;
+}
+.facebook:hover{
+    color: #3b5998;
+}
+.youtube:hover{
+    color: #b31217;
+}
+.twitter:hover{
+    color: #4099FF;
+}
+.creditos>div{
+    font-family: Lane;
+    font-size: 20px;
+}
+.culbtn{
+    width: 120px;
+    height: 40px;
+    font-family: Lane;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color:  #f1c40f;
+    border: none;
+    border-radius: 8px;
+}
+.culbtn:hover {
+    background-color: rgba(0,0,0,0);
+    color: black;
+    box-shadow: inset 0 0 0 3px  #f1c40f;
+}
+.noculbtn{
+    width: 120px;
+    height: 40px;
+    font-family: Lane;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+.noculbtn:hover {
+    background-color: rgba(0,0,0,0);
+    color: black;
+    box-shadow: inset 0 0 0 3px gray;
+}
+.campos{
+    font-family: Lane;
+    font-size: 20px;
+    color: black;
+}

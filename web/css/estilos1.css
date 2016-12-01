@@ -1,0 +1,23 @@
+@font-face{
+	font-family: MashedPotatoes;
+	src: url(fonts/Semringah.ttf);
+
+}
+
+@font-face{
+	font-family: Salad;
+	src: url(fonts/FolksBlack.ttf);
+}
+
+.hamburger{
+	background: rgba(68,108,179,0.75);
+}
+
+.milkshake>li>a{
+    font-family: Salad;
+}
+
+.macandcheese{
+	font-size: 30px;
+	font-family: Salad;
+}

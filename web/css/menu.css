@@ -1,0 +1,241 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26/11/2016, 10:23:07 PM
+    Author     : Yax
+*/
+@font-face {
+font-family:Hiruko;
+src: url(font/HirukoBlackAlternate.ttf);
+}
+@font-face {
+font-family:Lane;
+src: url(font/HelloAnnie.ttf);
+}
+.colorito{
+    background-color: rgba(211, 84, 0, 1);
+    transition: 0.5s all linear;
+}
+.enlaces>li>a{
+	color: white;
+        font-family: Lane;
+        font-size: 23px;
+}
+.enlaces>li>a:hover,
+.enlaces>li>a.hover
+{
+    color: #f1c40f;
+    background-color: transparent;
+}
+.enlaces> li>a:focus,
+.enlaces>li>a.focus{
+    background-color: #f1c40f;
+    color: white;
+    border-radius: 8px;
+    outline: 0px;
+}
+.enlaces> li>a:active,
+.enlaces>li>a.active{
+    background-color:  #f1c40f;
+    outline: 0px;
+    border-radius: 8px;
+    color:white;
+}
+.enlaces2{
+	background-color: rgba(211, 84, 0, 1);
+        font-family: Lane;
+        font-size: 23px;
+}
+.enlaces2>li>a{
+	background: transparent;
+        color: white;
+}
+.enlaces2>li>a:hover{
+	background: transparent;
+        color: #f1c40f;
+}
+.enlaces> li>a:focus,
+.enlaces>li>a.focus{
+    background: #f1c40f;
+    outline: 0px;
+    color:white;
+}
+.enlaces> li>a:active,
+.enlaces>li>a.active{
+    background: #f1c40f;
+    outline: 0px;
+    color:white;
+}
+.hm-icon{
+	background: white;
+}
+.hm-lk{
+	color: white;
+        font-family: Hiruko;
+        font-size: 23px;
+}
+.hm-lk:hover{
+    color: #f1c40f;
+}
+.hm-lk:focus{
+    color: #f1c40f;
+}
+.hm-lk:active{
+    color: #f1c40f;
+}
+.culbtn{
+    width:135px;
+    height: 34px;
+    font-family: Lane;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color:  #f1c40f;
+    border: none;
+    border-radius: 8px;
+}
+.culbtn:hover {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    box-shadow: inset 0 0 0 3px  #f1c40f;
+}
+.culbtn2{
+    width:100px;
+    height: 40px;
+    font-family: Lane;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color:  #f1c40f;
+    border: none;
+    border-radius: 8px;
+}
+.culbtn2:hover {
+    background-color: rgba(0,0,0,0);
+    color: black;
+    box-shadow: inset 0 0 0 3px  #f1c40f;
+}
+.culbtn>input{
+    width:65px;
+    height: 34px;
+    font-family: Lane;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color:  #f1c40f;
+    border: none;
+    border-radius: 8px;
+}
+.culbtn>input:hover {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    box-shadow: inset 0 0 0 3px  #f1c40f;
+}
+.campo{
+    font-family: Lane;
+    font-size: 20px;
+    color: black;
+}
+.validacion{
+    background-color: #4DAF7C;
+    color: white;
+    font-family: Lane;
+    font-size: 20px;
+}
+.noculbtn{
+    width: 100px;
+    height: 40px;
+    font-family: Lane;
+    font-size: 20px;
+    text-align: center;
+    outline: none;
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+.noculbtn:hover {
+    background-color: rgba(0,0,0,0);
+    color: black;
+    box-shadow: inset 0 0 0 3px gray;
+}
+.centrado{
+    font-family: Lane;
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+.datox>div>div>input{
+    font-size: 20px;
+    color: black;
+}
+.datox>div>div>input:focus{
+    outline: 0px;
+}
+.snc{
+    color: red;
+    visibility: hidden;
+}
+.area{
+    font-size: 20px;
+    color: black;   
+}
+.buscarD{
+    text-align: right;
+}
+.buscarD>img{
+    width: 40px;
+    height: 40px;
+}
+.perfils{
+    text-align: right;
+}
+.perfils>a{
+    text-align: right;
+    font-size: 20px;
+    text-decoration: none;
+}
+.adornos{
+    height: 180px;
+     border: 3px dotted #4DAF7C;
+}
+.adornos>a{
+    font-size: 20px;
+    text-decoration: none;
+}
+.centrox{
+    text-align: center;
+    font-size: 30px;
+    font-family: Lane;
+     border: 3px dotted #4DAF7C;
+}
+#globo{
+    width: 60%;
+    height: 150px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #555;
+    background-color: #666;
+    position: relative;
+    color: #FFF;
+    float: left;
+}
+#globo:before{
+    content: "";
+    width: 0;
+    position: absolute;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent #666;
+    top: 20px;
+    right: -10px;
+}
