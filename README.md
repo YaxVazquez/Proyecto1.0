@@ -1,2 +1,2 @@
 # DOGS-CO
-Un proyecto cul
+Un proyecto cool
