@@ -50,7 +50,39 @@ public class cMail1 {
             //contenido html
             BodyPart contenidohtml = new MimeBodyPart( ) ; 
             contenidohtml.setContent("<html>" 
-                    + "Hola, es genial saber de ti <a href='http://localhost:8080/Proyecto1.0/validar.jsp'> haz click aqui</a> y verifica tu cuenta" 
+                    + "<div style=\"height: 180px; border: 3px dotted #4DAF7C;padding-right: 15px;padding-left: 15px;margin-right: auto;margin-left: auto;\">\n" +
+"	<table>\n" +
+"		<tr>\n" +
+"			<td>\n" +
+"				\n" +
+"		<h3>¡Hola!</h3>\n" +
+"		<h4>Gracias por registrarte, activa tu cuenta</h4><br>\n" +
+"		\n" +
+"		<a href='http://localhost:8080/Proyecto1.0/validar.jsp'><input type=\"button\" name=\"activar\" style=\"width: 80px;\n" +
+"    											   height: 40px;\n" +
+"    												font-family: Lane;\n" +
+"    												font-size: 18px;\n" +
+"    		text-align: center;\n" +
+"    cursor: pointer;\n" +
+"    outline: none;\n" +
+"    color: white;\n" +
+"    background-color: #f1c40f;\n" +
+"    border: none;\n" +
+"    border-radius: 8px;\" value=\"Activar\"></a>\n" +
+"		\n" +
+"	\n" +
+"\n" +
+"			</td>\n" +
+"			<td>&nbsp;</td>\n" +
+"			<td>&nbsp;</td>\n" +
+"			<td>&nbsp;</td>\n" +
+"			<td><img src=\"Proyecto1.0/web/img/perries2.png\" alt=\"doggofeliz\"></td>\n" +
+"		</tr>\n" +
+"\n" +
+"	</table>\n" +
+"\n" +
+"	<h4>Si no puedes visualizar el correo, copia la siguiente url en tu navegador: http://localhost:8080/Proyecto1.0/validar.jsp</h4>\n" +
+"	</div>" 
                     + "</html>", "text/html" ) ; 
                 // Una MultiParte para agrupar texto y adjunto. 
             MimeMultipart multiPart = new MimeMultipart( ) ; 

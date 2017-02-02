@@ -93,4 +93,4 @@ Clave blob);
 
 select * from Usuario
 
-insert into Fotos values('1','1','Walk.jpg');
+#insert into Fotos values('1','1','Walk.jpg');
