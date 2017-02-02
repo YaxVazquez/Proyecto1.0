@@ -76,7 +76,7 @@ public class cMail1 {
 "			<td>&nbsp;</td>\n" +
 "			<td>&nbsp;</td>\n" +
 "			<td>&nbsp;</td>\n" +
-"			<td><img src=\"Proyecto1.0/web/img/perries2.png\" alt=\"doggofeliz\"></td>\n" +
+"			<td><img src=\"https://1.bp.blogspot.com/-lV68sFGNuc8/WJNixitSNOI/AAAAAAAAAL4/-f4U8edpQR8Zy9aGPKDpRqlxvOole9uegCLcB/s1600/perries.png\" alt=\"doggofeliz\"></td>\n" +
 "		</tr>\n" +
 "\n" +
 "	</table>\n" +

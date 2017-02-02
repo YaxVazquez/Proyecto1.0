@@ -176,10 +176,10 @@
                 out.print(error.toString());
             }
             try{
-                R = s.executeQuery("select * from Centro where Usuario='"+usuario+"';");
+                R = s.executeQuery("select * from Centro where NombreCentro='"+usuario+"';");
                 if(R.next()){
                     String cen = R.getString("NombreCentro");
-                    String con  = R.getString("Contrasena");
+                    String con  = R.getString("Contraseña");
                     String des = R.getString("Descripcion");
                     String tel = R.getString("Telefono");
                     String corr = R.getString("Correo");
@@ -197,11 +197,11 @@
                           + " <div class='form-group'>"
                           + " <label for='Nombre' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'> Nombre </label>"
                           + "<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
-                          + "<input type='text' class='form-control' name='nome' id='nome' value='"+cen+"'required> </div>"
-                          + " <label for='Apellido' class='col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label'>Contraseña</label>"
+                          + "<input type='text' class='form-control' name='nome' id='nome' value='"+cen+"' disabled> </div>"
+                          + " <label for='Apellido' class='col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label'>Clave</label>"
                           + "<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
                           + "<input type='text' class='form-control' name='contrase' id='contrase' value='"+con+"' required ></div> </div> <div class='form-group'>"
-                          + "<label for='Repetir' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Descripcion</label>"
+                          + "<label for='Repetir' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Texto</label>"
                           + " <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
                           + "<textarea class='form-control' name='descripcion' id='descripcion' value='"+des+"'></textarea></div>"
                           + "<label for='e-mail' class='col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label'>Teléfono</label>"
@@ -229,7 +229,7 @@
                  String ndes = request.getParameter("descripcion");
                  String ntel = request.getParameter("fon");
                  String ncorr = request.getParameter("correo");
-                 String userr = (String)sesion.getAttribute("user");
+                 String userr = request.getParameter("nome");
                
                 Connection con=null;
                 Statement st = null;
@@ -239,14 +239,14 @@
                     if (usuario.equals(userr)){
                             try
                        {
-                           if(ncon.equals(R.getString("Contrasena"))){
+                           if(ncon.equals(R.getString("Contraseña"))){
                             
                            }
                            else{
                                Class.forName("com.mysql.jdbc.Driver").newInstance();
                            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/doggos","root","n0m3l0");
                            st = con.createStatement();
-                               String queryString="update Centro set Contrasena='"+ncon+"' where Usuario= '"+usuario+"' ;";
+                               String queryString="update Centro set Contraseña='"+ncon+"' where NombreCentro= '"+usuario+"' ;";
                                 pstatement=con.prepareStatement(queryString);
                                 pstatement.executeUpdate();
                                 out.println("<meta http-equiv='refresh' content='.0000001;URL=http://localhost:8080/Proyecto1.0/PerfilCentro.jsp'/>");
@@ -259,7 +259,7 @@
                            Class.forName("com.mysql.jdbc.Driver").newInstance();
                            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/doggos","root","n0m3l0");
                            st = con.createStatement();
-                               String queryString="update Centro set NombreCentro ='"+ncen+"' where Usuario= '"+usuario+"' ;";
+                               String queryString="update Centro set NombreCentro ='"+ncen+"' where NombreCentro= '"+usuario+"' ;";
                                 pstatement=con.prepareStatement(queryString);
                                 pstatement.executeUpdate();
                                 out.println("<script>alert('Se ha actualizado el Nombre del Centro') </script>;"); 
@@ -273,7 +273,7 @@
                        Class.forName("com.mysql.jdbc.Driver").newInstance();
                            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/doggos","root","n0m3l0");
                            st = con.createStatement();
-                               String queryString="update Centro set Descripcion='"+ndes+"'where Usuario= '"+usuario+"' ;";
+                               String queryString="update Centro set Descripcion='"+ndes+"'where NombreCentro= '"+usuario+"' ;";
                                 pstatement=con.prepareStatement(queryString);
                                 pstatement.executeUpdate();
                                 out.println("<script>alert('Se ha actualizado la descripcion') </script>;"); 
@@ -287,7 +287,7 @@
                            Class.forName("com.mysql.jdbc.Driver").newInstance();
                            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/doggos","root","n0m3l0");
                            st = con.createStatement();
-                               String queryString="update Centro set Telefono='"+ntel+"'where Usuario= '"+usuario+"' ;";
+                               String queryString="update Centro set Telefono='"+ntel+"'where NombreCentro= '"+usuario+"' ;";
                                 pstatement=con.prepareStatement(queryString);
                                 pstatement.executeUpdate();
                                 out.println("<script>alert('Se ha actualizado el teléfono') </script>;"); 
@@ -301,7 +301,7 @@
                            Class.forName("com.mysql.jdbc.Driver").newInstance();
                            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/doggos","root","n0m3l0");
                            st = con.createStatement();
-                               String queryString="update Centro set Correo='"+ncorr+"' where Usuario= '"+usuario+"' ;";
+                               String queryString="update Centro set Correo='"+ncorr+"' where NombreCentro= '"+usuario+"' ;";
                                 pstatement=con.prepareStatement(queryString);
                                 pstatement.executeUpdate();
                                 out.println("<script>alert('Se ha actualizado el correo') </script>;"); 
