@@ -67,8 +67,9 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right enlaces">
-              <li><a href="#Nosotros">¿Quienes somos?</a></li>
-              <li><a href="#Centros">Centros</a></li>
+                <li><a href="#Nosotros">¿Quienes somos?</a></li>
+              <li><a href="#Ellos">¿Qué es Dogs&Co?</a></li>
+              <li><a href="#Como">¿Cómo funciona Dogs&Co?</a></li>
               <li><a href="#" data-toggle="modal" data-target="#registro">Registrate</a></li>
               <li><a href="#" data-toggle="modal" data-target="#sesions">Inicia Sesión</a></li>
               <li><a href="#Contacto">Contactanos</a></li>
@@ -197,6 +198,22 @@
         <div class="container" id="Nosotros">
             <br> <br>
           <h1 class="hm-tl">¿Quienes somos?</h1>
+    <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <h1 class="hm-tlRR"> Misión.</h1> <p class="who"> 
+Somos una empresa que se interesa por la experiencia del cliente, creando softwares basados en nuestra experiencia como usuarios, buscamos que el programa capture la atención del cliente y le sea de utilidad.</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <h1 class="hm-tlRR"> Visión. </h1> <p class="who">
+Llegar a ser la opción de preferencia de los usuarios por ser reconocidos en el diseño de software útil y eficaz así como por ser una organización abierta a ideas nuevas haciendo que los jóvenes se sientan cómodos con la manera en que desarrollamos aplicaciones.</p>
+            </div>
+          </div>
+          
+        </div>  
+        
+        <div class="container" id="Ellos">
+            <br> <br>
+          <h1 class="hm-tl">¿Qué es Dogs&Co?</h1>
           <p class="who">Dogs&Co es un proyecto dedicado a ayudar a las personas que ayudan. 
             La adopción de animales siempre ha presentado diversas problemáticas, desde el hecho de que las personas optan por comprar en lugar de adoptar, hasta la dificultad al realizar el proceso de adopción.
              Los perros callejeros representan un sector débil en nuestra sociedad, y las personas que ayudan  a este sector se ven en situaciones complicadas porque cada día hay más y más perros sin hogar, y cada día se pierde más la cultura de la adopción lo que afecta a estas ya sea por cuestiones económicas o  de espacio.
@@ -204,26 +221,26 @@
             Se busca motivar la adopción, poniendo al alcance de las personas la información necesaria para facilitar ese proceso.
             Con nuestro software las personas podrán encontrar centros de adopción a su alcance con mayor rapidez, podrán saber más sobre los requisitos para adoptar y buscar su mascota ideal, para así aligerar el proceso.  
           </p>
-        </div>  
+        </div> 
 
-        <div class="container" id="Centros">
+        <div class="container" id="Como">
             <br> <br>
-          <h1 class="hm-tl">Centros</h1>
+          <h1 class="hm-tl">¿Cómo funciona Dogs&Co?</h1>
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src="img/centro1.jpg" class="img-responsive img-thumbnail img-rounded" alt="#">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <img src="img/011.png" class="img-responsive" alt="#">
+              <p class="who"> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; Elige una mascota</p>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src="img/centro5.jpg" class="img-responsive img-thumbnail img-rounded" alt="#">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <img src="img/022.png" class="img-responsive" alt="#">
+               <p class="who">&nbsp; &nbsp;&nbsp; &nbsp;Ponte en contacto con el centro</p>
             </div>
 
-            <div class="clearfix visible-lg visible-md"></div>
+            <!--<div class="clearfix visible-lg visible-md"></div>-->
 
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src="img/Centro3.jpg" class="img-responsive img-thumbnail img-rounded" alt="#">
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <img src="img/centro4.jpg" class="img-responsive img-thumbnail img-rounded" alt="#">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+              <img src="img/033.png" class="img-responsive" alt="#">
+               <p class="who">&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Cambia la vida de un perro</p>
             </div>
           </div>
         </div> 
