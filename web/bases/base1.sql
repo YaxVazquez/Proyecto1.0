@@ -58,6 +58,7 @@ Correo varchar(30) not null,
 IdDireccion int(2),
 foto blob,
 Sesion boolean,
+URLMapa blob,
 foreign key(IdDireccion) references DireccionCentro (IdDireccion));
 
 create table Perro(IdPerro int(3) primary key not null,

@@ -21,7 +21,7 @@
             int id;
             String nom,email,tel,user,contra;
             String calle,numint,numext,cp,colonia,delegacion,estado;
-            String descripcion;
+            String descripcion, urlmap;
             
             nom=request.getParameter("nomC");
             email=request.getParameter("correo");
@@ -34,14 +34,14 @@
             cp=request.getParameter("cp");
             colonia=request.getParameter("colonia");
             delegacion=request.getParameter("delegacion");
-            estado=request.getParameter("estado");
             descripcion=request.getParameter("comment");
+            urlmap=request.getParameter("url");
             
             try{
                 BD.Conexion con= new BD.Conexion();
                 con.conectar();
                 ResultSet r1= con.consulta("call addCentro('"+0+"','"+nom+"','"+user+"','"+contra+"','"
-                +descripcion+"','"+tel+"','"+email+"','"+calle+"','"+numint+"','"+numext+"','"+cp+"','"+colonia+"','"+delegacion+"','"+estado+"');");
+                +descripcion+"','"+tel+"','"+email+"','"+urlmap+"','"+calle+"','"+numint+"','"+numext+"','"+cp+"','"+colonia+"','"+delegacion+", Ciudad de México);");
                 
                 if(r1.next())
                 {

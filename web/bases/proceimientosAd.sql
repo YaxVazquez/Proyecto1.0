@@ -42,7 +42,7 @@ select clave from Administrador;
 drop procedure if exists addCentro;
 delimiter **
 create procedure addCentro(in IdC int(2), in NombreC varchar(30), in UsuarioC varchar(30),
-in ContraseniaC varchar(30), in DescripcionC blob, in TelefonoC varchar(20), in CorreoC varchar(30),
+in ContraseniaC varchar(30), in DescripcionC blob, in TelefonoC varchar(20), in CorreoC varchar(30), in URL blob,
 in CalleC varchar(30), in NumIntC varchar(4), in NumExtC varchar(4), in CpC varchar(5),
 in ColoniaC varchar(30), in DelegacionC varchar(30), in EstadoC varchar(30) )
 begin
@@ -56,8 +56,8 @@ begin
 		set idusr = (select ifnull(max(IdCentro), 0) + 1 from Centro);
         insert into DireccionCentro(IdDireccion, Calle, NumInt, NumExt, Cp, Colonia, Delegacion, Estado)
         values (idusr, CalleC, NumIntC , NumExtC, CpC, ColoniaC,DelegacionC,EstadoC);
-        insert into Centro(IdCentro, NombreCentro, Usuario, Contraseña, Descripcion, Telefono,Correo, IdDireccion)
-		values(idusr,NombreC, UsuarioC, ContraseniaC, DescripcionC,TelefonoC,CorreoC,idusr);
+        insert into Centro(IdCentro, NombreCentro, Usuario, Contraseña, Descripcion, Telefono,Correo,URLMapa, IdDireccion)
+		values(idusr,NombreC, UsuarioC, ContraseniaC, DescripcionC,TelefonoC,CorreoC,URL,idusr);
         
 		set msj = 'Registro Exitoso';
 	else

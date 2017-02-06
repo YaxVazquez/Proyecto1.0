@@ -79,19 +79,19 @@
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                             <input type="text" class="form-control" name="correo" id="correo" placeholder="Correo" autocomplete="off" minlength='1' maxlength='30'title='Utilice menos de 30 caracteres' required>
                         </div>
-                            <label for="usuario" class="col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label">Usuario</label>
+                            <label for="usuario" class="col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label">Responsable</label>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" autocomplete="off" minlength='1' maxlength='30'title='Utilice menos de 30 caracteres' required>
+                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Responsable del Centro" autocomplete="off" minlength='1' maxlength='30'title='Utilice menos de 30 caracteres' required>
                         </div>
                       </div>
                       <div class="form-group">
                             <label for="Contraseña" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label">Contraseña</label>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <input type="text" class="form-control" name="contrax" id="contrax" placeholder="Contraseña" autocomplete="off" minlength='1' maxlength='30'title='Utilice menos de 30 caracteres' required>
+                            <input type="password" class="form-control" name="contrax" id="contrax" placeholder="Contraseña" autocomplete="off" minlength='1' maxlength='30'title='Utilice menos de 30 caracteres' required>
                         </div>
                             <label for="Repetir" class="col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label">Confirmar</label>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <input type="text" class="form-control" name="conf" id="conf" placeholder="Confirmar Contraseña" autocomplete="off">
+                            <input type="password" class="form-control" name="conf" id="conf" placeholder="Confirmar Contraseña" autocomplete="off">
                         </div>
                       </div>
                         
@@ -134,12 +134,7 @@
                             
                       </div>
                         
-                      <div class="form-group">
-                          <label for="estado" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label">Estado</label>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                            <input type="text" class="form-control" name="estado" id="estado" placeholder="Estado" autocomplete="off" minlength='1' maxlength='30'title='Utilice menos de 30 caracteres' required>
-                        </div>    
-                      </div>
+                     
                         <br>
                       <div class="form-group">
                           <h4 class="text-center">Perfil</h4> <br>
@@ -147,6 +142,12 @@
                         <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                             <textarea class="form-control" name="comment" id="comment" placeholder="Descripción del centro"></textarea>
                         </div>
+                      </div>
+                      <div class="form-group">
+                          <label for="url" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label">URL</label>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            <input type="text" class="form-control" name="url" id="url" placeholder="URL del mapa" autocomplete="off" required>
+                        </div>    
                       </div>
                        <div class="form-group">
                          <br>
