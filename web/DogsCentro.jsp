@@ -103,8 +103,8 @@
                 }
                 else{
                     out.println("<script>alert('El perro no existe');</script>");
-            }
-            } 
+                    }
+                } 
             }
             %>
             
@@ -115,7 +115,7 @@
            <div class="well well-sm">
                 <div class="row">
                     <div class="col-sm-6 col-md-4">
-                        <img src="img/<%=lis.get(0).getRuta()%>" alt="" class="img-rounded img-responsive" />
+                        <img src="img/<%=lis.get(i).getRuta()%>" alt="" class="img-rounded img-responsive" />
                     </div>
                     <div class="col-sm-6 col-md-8">
                         <h4> <%= k.get(i).getNombre()%></h4>
