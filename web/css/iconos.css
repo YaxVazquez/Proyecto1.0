@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('..//fonts/icomoon.eot?c27k9u');
-  src:  url('..//fonts/icomoon.eot?c27k9u#iefix') format('embedded-opentype'),
-    url('..//fonts/icomoon.ttf?c27k9u') format('truetype'),
-    url('..//fonts/icomoon.woff?c27k9u') format('woff'),
-    url('..//fonts/icomoon.svg?c27k9u#icomoon') format('svg');
+  src:  url('..//fonts/icomoon.eot?c4rklb');
+  src:  url('..//fonts/icomoon.eot?c4rklb#iefix') format('embedded-opentype'),
+    url('..//fonts/icomoon.ttf?c4rklb') format('truetype'),
+    url('..//fonts/icomoon.woff?c4rklb') format('woff'),
+    url('..//fonts/icomoon.svg?c4rklb#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,32 +27,35 @@
 .icon-paw:before {
   content: "\e900";
 }
-.icon-image:before {
-  content: "\e90d";
+.icon-number:before {
+  content: "\e901";
 }
-.icon-images:before {
-  content: "\e90e";
+.icon-number2:before {
+  content: "\e902";
 }
-.icon-play:before {
-  content: "\e912";
+.icon-number3:before {
+  content: "\e903";
 }
-.icon-folder-open:before {
-  content: "\e930";
+.icon-number4:before {
+  content: "\e904";
 }
-.icon-leaf:before {
-  content: "\e9a4";
+.icon-number5:before {
+  content: "\e905";
 }
-.icon-rocket:before {
-  content: "\e9a5";
+.icon-number6:before {
+  content: "\e906";
 }
-.icon-google2:before {
-  content: "\ea89";
+.icon-number7:before {
+  content: "\e907";
 }
-.icon-google3:before {
-  content: "\ea8a";
+.icon-number8:before {
+  content: "\e908";
 }
-.icon-google-plus:before {
-  content: "\ea8b";
+.icon-number9:before {
+  content: "\e909";
+}
+.icon-number10:before {
+  content: "\e90a";
 }
 .icon-facebook:before {
   content: "\ea90";
@@ -66,19 +69,7 @@
 .icon-twitter:before {
   content: "\ea96";
 }
-.icon-youtube:before {
-  content: "\ea9d";
-}
 .icon-youtube2:before {
   content: "\ea9e";
-}
-.icon-github:before {
-  content: "\eab0";
-}
-.icon-tumblr:before {
-  content: "\eab9";
-}
-.icon-tumblr2:before {
-  content: "\eaba";
 }
 

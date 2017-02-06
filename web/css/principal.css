@@ -188,3 +188,8 @@ a:focus{
         font-family: Hiruko;
         font-size: 18px;
 }
+
+.numeros{
+    color: rgba(211, 84, 0, 1);
+    font-size: 120px;
+}
