@@ -212,18 +212,18 @@
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <p class="numeros">&nbsp;&nbsp;&nbsp;<span class="icon icon-number10" alt="#"></span></p>
-              <p class="who">  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; Elige una mascota</p>
+              <p class="hm-tl"> &nbsp;&nbsp; &nbsp;&nbsp; Elige una mascota</p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <p class="numeros">&nbsp;&nbsp;&nbsp;<span class="icon icon-number9" alt="#"></span></p>
-               <p class="who"> &nbsp;&nbsp; &nbsp;Ponte en contacto con el centro</p>
+               <p class="hm-tl">Ponte en contacto con el centro</p>
             </div>
 
             <!--<div class="clearfix visible-lg visible-md"></div>-->
 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                 <p class="numeros">&nbsp;&nbsp;&nbsp;<span class="icon icon-number8" alt="#"></span></p>
-               <p class="who"> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Cambia la vida de un perro</p>
+               <p class="hm-tl"> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Cambia la vida de un perro</p>
             </div>
           </div>
         </div> 
