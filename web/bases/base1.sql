@@ -92,6 +92,6 @@ create table Administrador(IdAdministrador int(1) primary key not null,
 Tipo varchar(20),
 Clave blob);
 
-select * from Usuario
+select * from direccioncentro
 
 #insert into Fotos values('1','1','Walk.jpg');

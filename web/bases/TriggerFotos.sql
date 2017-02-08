@@ -5,9 +5,9 @@ AFTER Insert ON Perro FOR EACH ROW
 BEGIN 
 
 declare id int;
-set id= (SELECT COUNT(idFoto )  FROM Fotos );
+set id= (select ifnull(max(idFoto),0) + 1  FROM Fotos );
 
-insert into Fotos values(id+1,id+1,'Yax2.jpg');
+insert into Fotos values(id,id,'Yax2.jpg');
 
 END// 
 

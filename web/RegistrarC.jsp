@@ -41,7 +41,7 @@
                 BD.Conexion con= new BD.Conexion();
                 con.conectar();
                 ResultSet r1= con.consulta("call addCentro('"+0+"','"+nom+"','"+user+"','"+contra+"','"
-                +descripcion+"','"+tel+"','"+email+"','"+urlmap+"','"+calle+"','"+numint+"','"+numext+"','"+cp+"','"+colonia+"','"+delegacion+", Ciudad de México);");
+                +descripcion+"','"+tel+"','"+email+"','"+urlmap+"','"+calle+"','"+numint+"','"+numext+"','"+cp+"','"+colonia+"','"+delegacion+"');");
                 
                 if(r1.next())
                 {
