@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/iconos.css">
         <link rel="stylesheet" href="css/menu.css">
+        <link rel="stylesheet" href="css/principal.css">
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -144,6 +145,40 @@
                 }
             }
                     %>
+                    
+    <br><br> <br><br><br>                   
+                    <div>
+                        <a href="#" data-toggle="modal" data-target="#filtross"><button>perro</button></a>
+                    </div>
+                
+            <div class="modal fade centrado" id ="filtross">    
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <form action="index.jsp" class="form-horizontal" method="post">
+                  <div class="modal-header colors">
+                    <button class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title"><span class="glyphicon glyphicon-filter"></span>Filtros de búsqueda</h3>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                      </div>
+                      <div class="form-group">
+                      </div>
+                      <div class="form-group">
+                      </div>
+                      <div class="form-group">
+                      </div>
+                      
+                      
+                  </div>
+                 <div class="modal-footer">
+                    <input type='submit' name='busk' id='busk' class='btn culbtn' value='Encuentra!'s>
+                    <button class="btn noculbtn" data-dismiss="modal"> Cancelar </button>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>

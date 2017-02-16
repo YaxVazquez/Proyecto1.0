@@ -185,10 +185,19 @@
                         +"<label for='Repetir' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Edad</label>"
                         +"<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
                           +"<input type='text' class='form-control' name='edad' id=edad' value='"+eda+"' required></div></div><div class='form-group'>"
-                          + "<label for='Contraseña' class='col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label'>Descripcion</label>"
+                          
+                                  
+                                  
+                                  + "<label for='Contraseña' class='col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label'>Descripcion</label>"
                           + "<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
-                          + "<textarea class='form-control' name='descripcion' id='descripcion' value='"+desc+"'></textarea></div></div></div><div class='modal-footer'>"
+                          + "<textarea class='form-control' name='descripcion' id='descripcion' value='"+desc+"'></textarea></div></div>"
+                                  + "<div class='form-group'>"
+                          + "<label for='sex' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Sexo</label>"
+                          + " <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
+                          + "<input type='text' class='form-control' name='sexo' id='sexo' value='"+pes+"'required></div>"
+                                  + "</div><div class='modal-footer'>"
                           + "<input type='submit' name='Modificar"+i+"' id='Modificar' value='Modificar' onClick='return validar(nome,contrase,telefo,correo);'>"
+                                                           
                           + " </div></form></div></div> </div>");
                         out.println("<input type='hidden' value='"+nperros.get(i)+"' id=''>");
                         
@@ -379,7 +388,7 @@
                         </div>
                         <label for="Apellido" class="col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label">Peso</label>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <input type="text" class="form-control" name="peso" id="peso" placeholder="Peso"required>
+                          <input type="text" class="form-control" name="peso" id="peso" placeholder="Pesos(kg)"required>
                         </div>
                       </div>
                       <div class="form-group">
@@ -397,8 +406,14 @@
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                           <input type="text" class="form-control" name="edad" id="edad" placeholder="Edad"required>
                         </div>
-                        <label for="Repetir" class="col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label">Descripcion</label>
+                        <label for="sexo" class="col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label">Sexo</label>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                          <input type="text" class="form-control" name="sexo" id="sexo" placeholder="Sexo" required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="Repetir" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label">Descripcion</label>
+                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                             <textarea class="form-control" name="descripcion" required></textarea>
                         </div>
                       </div>

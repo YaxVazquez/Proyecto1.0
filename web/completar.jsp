@@ -163,7 +163,7 @@
                   </div>
                 </form>
             <br>
-               <button class="btn noculbtn"> <span class='glyphicon glyphicon-trash'></span>Cancelar </button>
+            <a href="PaginaPrincipal.jsp"><button class="btn noculbtn"> <span class='glyphicon glyphicon-trash'></span>Cancelar </button></a>
             </div>
         <%       
                                }

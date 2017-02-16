@@ -69,6 +69,7 @@ Tamano varchar(10) not null,
 Rango_edad varchar(20) not null,
 Descripcion blob not null,
 IdCentro int(2) not null,
+sexo  varchar(6) not null,
 foreign key(IdCentro) references Centro(IdCentro)
 );
 
