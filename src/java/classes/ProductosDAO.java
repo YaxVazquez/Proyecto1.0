@@ -20,19 +20,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
 
 public class ProductosDAO {
-    String idCentro;
-    protected void doGet(HttpServletRequest peticion, HttpServletResponse respuesta) throws ServletException, IOException {
-        idCentro = (String)peticion.getSession().getAttribute("idCen");
-        
+    
+    String idCentr;
+    public void setId(String idCentr) {
+        this.idCentr = idCentr;
     }
 
     public List<Productos> BuscarTodos() throws SQLException {
-        String query = "select * from Perro;";
+        
+        String query = "select * from Perro where idCentro="+idCentr+";";
         try(Connection con = Conection.getConnection()) {
             PreparedStatement ps = con.prepareStatement(query);
             ResultSet rs = ps.executeQuery();

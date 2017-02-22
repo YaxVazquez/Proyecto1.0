@@ -14,6 +14,9 @@
  <%
         ProductosDAO p = new ProductosDAO();
         ProductosIMG m = new ProductosIMG();
+        HttpSession sesion = request.getSession();
+       String idCentr=(String)sesion.getAttribute("idCen");
+        p.setId(idCentr);
     ArrayList<Productos> k = (ArrayList)p.BuscarTodos(); 
     ArrayList<Productos> lis = (ArrayList)m.BuscarTodas();
     ArrayList<String> nperros = new ArrayList<String>();
@@ -75,7 +78,7 @@
             <input type="submit" name="Buscar"style="display:inline" value="Buscar">
             </form>
             <% 
-            HttpSession sesion = request.getSession();
+            
           if(sesion.getAttribute("userCentro") == null){
               String e="Inicia sesion o registrate";
               response.sendRedirect("indexP.jsp?e="+e+"");
@@ -187,7 +190,7 @@
                                   + "<div class='form-group'>"
                         +"<label for='Repetir' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Edad</label>"
                         +"<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
-                          +"<input type='text' class='form-control' name='edad' id=edad' value='"+eda+"' required>"
+                          +"<select name='sexo'><option value='"+eda+"'>"+eda+"</option></select>"
                                   +"<label for='Repetir' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Sexo</label>"
                                   + " <input type='text' class='form-control' name='sexo' id=sexo' value='"+sex+"'disabled=”disabled” ></div></div> <div class='form-group'>"
                           + "<label for='Contraseña' class='col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label'>Descripcion</label>"
