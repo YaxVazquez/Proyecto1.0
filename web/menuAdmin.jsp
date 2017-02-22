@@ -143,12 +143,7 @@
                             <textarea class="form-control" name="comment" id="comment" placeholder="Descripción del centro"></textarea>
                         </div>
                       </div>
-                      <div class="form-group">
-                          <label for="url" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label">URL</label>
-                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                            <input type="text" class="form-control" name="url" id="url" placeholder="URL del mapa" autocomplete="off" required>
-                        </div>    
-                      </div>
+     
                        <div class="form-group">
                          <br>
                           <label for="Foto" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label">Foto</label>

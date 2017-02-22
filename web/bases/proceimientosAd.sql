@@ -86,7 +86,7 @@ create procedure verCentro()
 begin
 	declare cuantos int;
     set cuantos=(select count(*) from Centro);
-	select IdCentro,NombreCentro,Telefono,Correo,concat_ws(', ', Estado,Delegacion,Colonia,Calle) as Direccion, cuantos from DireccionCentro inner join Centro on Centro.IdDireccion=DireccionCentro.IdDireccion;
+	select IdCentro,NombreCentro,Telefono,Correo,concat_ws(', ', Estado,Delegacion,Colonia,Calle) as Direccion, cuantos, URLMapa from DireccionCentro inner join Centro on Centro.IdDireccion=DireccionCentro.IdDireccion;
 end; **
 delimiter ;
 
@@ -119,4 +119,6 @@ delimiter ;
 
 call BorrarCentro("otrocentro");
 
+DELIMITER ; 
  #######################################################################
+

@@ -1,7 +1,7 @@
 drop database if exists doggos;
 create database doggos;
 use doggos;
-
+SET NAMES UTF8;
 drop table if exists DireccionUsuario;
 create table DireccionUsuario(IdDireccion int(2) primary key ,
 Calle varchar(30),
@@ -93,6 +93,13 @@ create table Administrador(IdAdministrador int(1) primary key not null,
 Tipo varchar(20),
 Clave blob);
 
-select * from direccioncentro
+select * from usuario;
+select * from centro;
+select * from direccionusuario;
+select * from direccioncentro;
 
-#insert into Fotos values('1','1','Walk.jpg');
+#user
+call addUser (0,1, 'chris123','Christopher', 'Osornio', '123456', 'osorniochris@gmail.com', 0);
+call addCentro(0,'Se Busca Amor', 'Clemente Herrera','12345678', 'Adopta, ellos te necesitan', '5588774103', 
+'ayudandoamor@gmail.com', 'Orizaba 203, Roma Nte., 06700 Ciudad de Mexico, CDMX',
+'Orizaba','2', '203', '06700', 'Roma','Cuauhtemoc');

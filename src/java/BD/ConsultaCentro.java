@@ -29,7 +29,7 @@ public class ConsultaCentro {
             center.setId(Integer.parseInt(rs.getString("IdCentro")));
             center.setNombre(rs.getString("NombreCentro"));
             center.setTelefono(rs.getString("Telefono"));
-            
+            center.setMapa(rs.getString("URLMapa"));
             listaCentros.add(center);
          }
          con.cierraConexion();

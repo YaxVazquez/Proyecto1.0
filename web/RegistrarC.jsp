@@ -12,6 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
         <title>Registro</title>
     </head>
     <body>
@@ -35,7 +36,7 @@
             colonia=request.getParameter("colonia");
             delegacion=request.getParameter("delegacion");
             descripcion=request.getParameter("comment");
-            urlmap=request.getParameter("url");
+            urlmap=calle+" "+numext+","+colonia+","+cp+", Ciudad de Mexico, CDMX";
             
             try{
                 BD.Conexion con= new BD.Conexion();

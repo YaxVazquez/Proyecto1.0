@@ -4,6 +4,8 @@
     Author     : Yax
 --%>
 
+<%@page import="java.util.LinkedList"%>
+<%@page import="BD.Centro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*, java.io.*"%>
 <!DOCTYPE html>
@@ -25,8 +27,9 @@
         <link rel="stylesheet" href="css/iconos.css">
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/principal.css">
-
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo_K0RY7FwMSRhdDO1lSnfsmea6iPWetI"></script>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -150,6 +153,121 @@
                     <div>
                         <a href="#" data-toggle="modal" data-target="#filtross"><button>perro</button></a>
                     </div>
+    <br>
+                    <div class="container" id="mapa" style="height: 400px;"></div>
+                   
+                    <script type="text/javascript">
+		
+		var divMapa= document.getElementById('mapa');
+		navigator.geolocation.getCurrentPosition(functionOk, functionNel);
+                
+                
+                function setMarkersok(map){
+                    var gMap= map; 
+                    var image = {
+                        url: 'http://www.petessentials.ie/wp-content/uploads/2015/02/dog-icon-@2x.png',
+                        size: new google.maps.Size(60, 60),
+                        
+                    };
+                    
+                    <%
+                        LinkedList<Centro> lista = BD.ConsultaCentro.getCentros();
+                         for (int i=0;i<lista.size();i++)
+                         {
+                             
+			out.println("var gCoder"+i+"= new google.maps.Geocoder();");
+                        out.println("var objInformacion={");
+			out.println("address:"+"'"+lista.get(i).getMapa()+"'"+"}");	
+
+			out.println("gCoder"+i+".geocode(objInformacion, fnCoder"+i+");");
+
+			out.println("function fnCoder"+i+"(datos){");
+			out.println("var coordenadas= datos[0].geometry.location;");
+
+			out.println("var config={");	
+			out.println("map: gMap,");		
+			out.println("position:coordenadas,");		
+			out.println("title:'Centro "+lista.get(i).getNombre()+"'}");		
+				
+
+                        out.println("var gMarkerDV"+i+"= new google.maps.Marker(config)");
+                        out.println("gMarkerDV"+i+".setIcon(image);");       
+                                
+                        out.println("var objHTML= {");
+			out.println("content:\"<div style='height:150px;width:300px;'><h3>Centro "+lista.get(i).getNombre()+""
+                                + "</h3><br>"
+                                + "<p><b>Teléfono:</b> "+ lista.get(i).getTelefono()+"</p><br>"
+                                + "<p><b>Correo:</b> "+ lista.get(i).getCorreo()+"</p></div>\"");		
+			out.println("}");	
+			out.println("var gIW"+ i +"= new google.maps.InfoWindow(objHTML);");	
+			out.println("google.maps.event.addListener(gMarkerDV"+i+",'click', function(){gIW"+i+".open(gMap,gMarkerDV"+i+");})");	
+			out.println("}");
+                         }
+                    %>
+                }
+		
+		function functionOk(respuesta){
+			var lat= respuesta.coords.latitude;
+			var lon= respuesta.coords.longitude;
+
+			var gLatLon= new google.maps.LatLng(lat, lon);
+			
+			var objConfigM={
+				zoom:17,
+				center:gLatLon
+			}
+			
+			var myMap= new google.maps.Map(divMapa, objConfigM);
+                        setMarkersok(myMap);
+
+			var objConfigMarker={
+				position:gLatLon,
+				animation: google.maps.Animation.DROP,
+				draggable:true,
+				map: myMap,
+				title:"Usted está aquí"
+			}
+
+			var gMarker = new google.maps.Marker(objConfigMarker);
+                        
+                        
+////////////////////////////////////Hasta aquí se carga el mapa inicial/////////////////////////////
+
+			
+		}
+                
+                
+                //ubicacion no permitida
+		function functionNel(){
+			
+			var gCoder= new google.maps.Geocoder();
+
+			var objInformacion={
+				address: 'CDMX'
+			}
+
+			gCoder.geocode(objInformacion, fnCoderNo);
+
+			function fnCoderNo(datos){
+				var coordenadas= datos[0].geometry.location; //obj LatLong
+
+				var objConfig={
+					zoom:9,
+					center:coordenadas
+				}
+			
+				var gMap= new google.maps.Map(divMapa, objConfig);
+                                setMarkersok(gMap);
+			}
+                   	
+		}
+
+		
+
+	</script>
+                    
+                    
+                    
                 
             <div class="modal fade centrado" id ="filtross">    
               <div class="modal-dialog modal-lg">

@@ -5,7 +5,7 @@ package BD;
 
 public class Centro {
     int id;
-    String direccion,correo,telefono,nombre;
+    String direccion,correo,telefono,nombre, mapa;
 
     public int getId() {
         return id;
@@ -45,6 +45,14 @@ public class Centro {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getMapa() {
+        return mapa;
+    }
+
+    public void setMapa(String mapa) {
+        this.mapa = mapa;
     }
     
     
