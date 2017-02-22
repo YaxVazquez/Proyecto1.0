@@ -84,6 +84,7 @@
                             HttpSession sesion = request.getSession();
                             sesion.setAttribute("userCentro", request.getParameter("useri"));
                             sesion.setAttribute("nCentro", r.getString("NombreCentro"));
+                            sesion.setAttribute("idCen", r.getString("idCentro"));
                            
                               s = c.createStatement();
                         String queryString="update Centro set Sesion='"+1+"' where Usuario ='"+user+"';";

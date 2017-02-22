@@ -109,10 +109,11 @@
             %>
             
              <div class="container" style="margin-top: 20px;">
+      
     <%for (int i = 0; i < k.size(); i++) {%>
+     
         <div class="col-xs-12 col-sm-6 col-md-6">
-            
-           <div class="well well-sm">
+               <div class="well well-sm">
                 <div class="row">
                     <div class="col-sm-6 col-md-4">
                         <img src="img/<%=lis.get(i).getRuta()%>" alt="" class="img-rounded img-responsive" />
@@ -131,6 +132,7 @@
                           String tam="";
                           String eda="";
                           String desc="";
+                          String sex="";
                 
                 try {
                     Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -150,6 +152,7 @@
                            tam=r.getString("Tamano");
                            eda=r.getString("Rango_edad");
                         desc=r.getString("Descripcion");
+                        sex=r.getString("Sexo");
                           
                              
                    
@@ -159,7 +162,7 @@
                 }
              
                             
-                             out.println("<div class='modal fade' id ='cambiar"+i+"'>");
+                         out.println("<div class='modal fade' id ='cambiar"+i+"'>");
               out.println("<div class='modal-dialog modal-lg'>");
                 out.println("<div class='modal-content'>");
                   out.println("<form action='DogsCentro.jsp' class='form-horizontal' method='post'>");
@@ -174,30 +177,23 @@
                           + "<input type='text' class='form-control' name='nome' id='nome' value='"+nombre+"'required> </div>"
                           + " <label for='Apellido' class='col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label'>Color</label>"
                           + "<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
-                          + "<input type='text' class='form-control' name='color' id='color' value='"+col+"' required ></div> </div> <div class='form-group'>"
+                          + "<input type='text' class='form-control' name='color' id='color' value='"+col+"' disabled=”disabled”></div> </div> <div class='form-group'>"
                           + "<label for='Repetir' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Peso</label>"
                           + " <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
                           + "<input type='text' class='form-control' name='peso' id='peso' value='"+pes+"'required></div>"
                           + "<label for='e-mail' class='col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label'>Tamaño</label>"
                           + "<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
-                          + "<input type='text' class='form-control' name='tamano' id='tamano' value='"+tam+"' required></div></div>"
+                          + "<input type='text' class='form-control' name='tamano' id='tamano' value='"+tam+"' disabled=”disabled”></div></div>"
                                   + "<div class='form-group'>"
                         +"<label for='Repetir' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Edad</label>"
                         +"<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
-                          +"<input type='text' class='form-control' name='edad' id=edad' value='"+eda+"' required></div></div><div class='form-group'>"
-                          
-                                  
-                                  
-                                  + "<label for='Contraseña' class='col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label'>Descripcion</label>"
+                          +"<input type='text' class='form-control' name='edad' id=edad' value='"+eda+"' required>"
+                                  +"<label for='Repetir' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Sexo</label>"
+                                  + " <input type='text' class='form-control' name='sexo' id=sexo' value='"+sex+"'disabled=”disabled” ></div></div> <div class='form-group'>"
+                          + "<label for='Contraseña' class='col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label'>Descripcion</label>"
                           + "<div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
-                          + "<textarea class='form-control' name='descripcion' id='descripcion' value='"+desc+"'></textarea></div></div>"
-                                  + "<div class='form-group'>"
-                          + "<label for='sex' class='col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label'>Sexo</label>"
-                          + " <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>"
-                          + "<input type='text' class='form-control' name='sexo' id='sexo' value='"+pes+"'required></div>"
-                                  + "</div><div class='modal-footer'>"
+                          + "<textarea class='form-control' name='descripcion' id='descripcion' value='"+desc+"'></textarea></div></div></div><div class='modal-footer'>"
                           + "<input type='submit' name='Modificar"+i+"' id='Modificar' value='Modificar' onClick='return validar(nome,contrase,telefo,correo);'>"
-                                                           
                           + " </div></form></div></div> </div>");
                         out.println("<input type='hidden' value='"+nperros.get(i)+"' id=''>");
                         
@@ -210,6 +206,7 @@
                  String ntam = request.getParameter("tamano");
                  String nedad = request.getParameter("edad");
                  String ndes = request.getParameter("descripcion");
+                  
                   String userr = (String)sesion.getAttribute("user");
                
                 Connection con=null;
@@ -232,19 +229,7 @@
                                 out.println("<meta http-equiv='refresh' content='.0000001;URL=http://localhost:8080/Proyecto1.0/DogsCentro.jsp'/>");
                            out.println("<script>alert('Se ha actualizado el nombre');</script>");
                            }
-                           if(ncol.equals(r.getString("Color"))){
-                           
-                           }
-                           else{
-                           Class.forName("com.mysql.jdbc.Driver").newInstance();
-                           con=DriverManager.getConnection("jdbc:mysql://localhost:3306/doggos","root","n0m3l0");
-                           st = con.createStatement();
-                               String queryString="update Perro set Color ='"+ncol+"' where idPerro= '"+id+"' ;";
-                                pstatement=con.prepareStatement(queryString);
-                                pstatement.executeUpdate();
-                                out.println("<script>alert('Se ha actualizado el color') </script>;"); 
-                                out.println("<meta http-equiv='refresh' content='.0000001;URL=http://localhost:8080/Proyecto1.0/DogsCentro.jsp'/>");
-                           } 
+                          
                            if(ndes.equals(r.getString("Descripcion"))|| ndes.length() ==0){
                            
                            }
@@ -258,21 +243,7 @@
                                 out.println("<script>alert('Se ha actualizado la descripcion') </script>;"); 
                                 out.println("<meta http-equiv='refresh' content='.0000001;URL=http://localhost:8080/Proyecto1.0/DogsCentro.jsp'/>");
                        }
-                           
-                           if(ntam.equals(r.getString("Tamano"))){
-                           
-                           }
-                           else{
-                           Class.forName("com.mysql.jdbc.Driver").newInstance();
-                           con=DriverManager.getConnection("jdbc:mysql://localhost:3306/doggos","root","n0m3l0");
-                           st = con.createStatement();
-                               String queryString="update Perro set Tamano='"+ntam+"'where idPerro= '"+id+"' ;";
-                                pstatement=con.prepareStatement(queryString);
-                                pstatement.executeUpdate();
-                                out.println("<script>alert('Se ha actualizado el tamaño') </script>;"); 
-                                out.println("<meta http-equiv='refresh' content='.0000001;URL=http://localhost:8080/Proyecto1.0/DogsCentro.jsp'/>");
-                           }
-                           
+                                                   
                            if(npes.equals(r.getString("Peso"))){
                            
                            }
@@ -308,7 +279,7 @@
                 +"<div class='modal-header'><button class='close' aria-hidden='true' data-dismiss='modal'>&times;</button>"
                  +"<h4 class='modal-title'>Eliminar perro</h4> </div><div class='modal-body'>"
                   +"<div class='form-group'><h1>¿Seguro que deseas eliminar a "+nombre+"</h1> </div></div><div class='modal-footer'>"
-                   +"<input type='submit' name='eliminar"+i+"' id='eliminar' class='btn' value='Eleminar' onClick='return validar(contrax, conf);'>"
+                   +"<input type='submit' name='eliminar"+i+"' id='eliminar' class='btn' value='Eliminar' onClick='return validar(contrax, conf);'>"
                   +"</div></form></div></div> </div>");
                      if(request.getParameter("eliminar"+i) != null){
                               
@@ -336,11 +307,13 @@
                                                 <p>
                             Color: <%=k.get(i).getCantidad()%>
                             <br />
-                           Peso: <%=k.get(i).getPrecio()%>
+                           Peso: <%=k.get(i).getPrecio()%> kg
                             <br />
                             Tamaño: <%=k.get(i).getRutaImagen()%>
                             <br />
-                            Edad: <%=k.get(i).getEdad()%>
+                            Rango de edad: <%=k.get(i).getEdad()%>
+                            <br />
+                            Sexo: <%=k.get(i).getSex()%>
                                                 </p>
                         <!-- Split button -->
                         <div class="btn-group">
@@ -367,6 +340,8 @@
        </div>
     </div>
          <% }%>
+        
+         
              </div>
  
  
@@ -394,21 +369,45 @@
                       <div class="form-group">
                         <label for="Repetir" class="col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 control-label">Color</label>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <input type="text" class="form-control" name="color" id="color" placeholder="color"required>
+                          
+                            <Select name="color">
+                                <option value="default">Seleccione una opción</option>
+                                <option value="blanco">Blanco</option>
+                                <option value="negro">Negro</option>
+                                <option value="cafe">Café</option>
+                                <option value="otro">Otro</option>
+                            </Select>
                         </div>
                         <label for="e-mail" class="col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label">Tamaño</label>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <input type="text" class="form-control" name="tamano" id="tamano" placeholder="tamaño"required>
+                            
+                            <Select name="tamano">
+                                <option value="default">Seleccione una opción</option>
+                                <option value="chico">Chico</option>
+                                <option value="mediano">Mediano</option>
+                                <option value="grande">Grande</option>
+                            </Select>
+                         
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="Contraseña" class="col-xs-12 col-sm-12 col-md-2 col-lg-2 control-label">Rango de Edad</label>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <input type="text" class="form-control" name="edad" id="edad" placeholder="Edad"required>
+                          
+                            <select name="edad">
+                                <option value="default">Seleccione una opción</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="adulto">Adulto</option>
+                            </select>
+                            
                         </div>
                         <label for="sexo" class="col-xs-12 col-sm-12 col-md-1 col-lg-1 control-label">Sexo</label>
                         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <input type="text" class="form-control" name="sexo" id="sexo" placeholder="Sexo" required>
+                            <select name="sexo">
+                                <option value="default">Seleccione una opción</option>
+                                <option value="macho">Macho</option>
+                                <option value="hembra">Hembra</option>
+                            </select>
                         </div>
                       </div>
                       <div class="form-group">
@@ -452,6 +451,7 @@
                 String ed=request.getParameter("edad");
                 String des=request.getParameter("descripcion");
                 String fot=request.getParameter("descripcion");
+                String sexx=request.getParameter("sexo");
                 r = s.executeQuery("select * from Centro where NombreCentro='"+usuario+"';");
                 r.next();
                     String idCen= r.getString("idCentro");
@@ -459,7 +459,7 @@
                 {
                     r = s.executeQuery("select * from Perro where Nombre ='"+nome+"' and IdCentro='"+idCen+"';");
                     if (!r.next()){
-                        String queryString="call addPerro('"+0+"','"+nome+"','"+pes+"','"+col +"','"+tam+"', '"+ed+"', '"+des+"', '"+idCen+"');";
+                        String queryString="call addPerro('"+0+"','"+nome+"','"+pes+"','"+col +"','"+tam+"', '"+ed+"', '"+des+"', '"+idCen+"', '"+sexx+"');";
                          pstatement=con.prepareStatement(queryString);
                          pstatement.executeUpdate();
                          

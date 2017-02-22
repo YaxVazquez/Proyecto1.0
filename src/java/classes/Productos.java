@@ -18,6 +18,8 @@ private String idPerro;
     private String descripcion;
     private String image;
     private String edad;
+    private String idCentro;
+    private String sexo;
 
     /**
      * @return the idProductos
@@ -121,5 +123,25 @@ private String idPerro;
      */
     public void setEdad(String ed) {
         this.edad = ed;
+    }
+     public String getIdCen() {
+        return idCentro;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setidCen(String id) {
+        this.idCentro = id;
+    }
+    public String getSex() {
+        return sexo;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setSex(String sexo) {
+        this.sexo = sexo;
     }
 }

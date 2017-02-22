@@ -15,8 +15,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+
 
 public class ProductosDAO {
+    String idCentro;
+    protected void doGet(HttpServletRequest peticion, HttpServletResponse respuesta) throws ServletException, IOException {
+        idCentro = (String)peticion.getSession().getAttribute("idCen");
+        
+    }
 
     public List<Productos> BuscarTodos() throws SQLException {
         String query = "select * from Perro;";
@@ -56,7 +69,8 @@ public class ProductosDAO {
         p.setDescripcion(rs.getString("descripcion"));
         p.setRutaImagen(rs.getString("Tamano"));
         p.setEdad(rs.getString("Rango_Edad"));
-        
+        p.setidCen(rs.getString("idCentro"));
+         p.setSex(rs.getString("Sexo"));
         return p;
     }
     
