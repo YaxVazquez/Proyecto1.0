@@ -27,6 +27,31 @@ jQuery(document).ready(function($) {
 $('#miModal').modal({
 	show:true
 });
-
-
+$('#popover').popover({
+   trigger: 'click',
+   html: true,
+   show:true
+});
+jQuery(document).ready(function($) {
+  $(window).scroll(function() {
+    var scrollPos = $(window).scrollTop(),
+        ul = $('.enlaces>li>a');
+    if (scrollPos > 20) {
+      ul.addClass('cambia-color');
+    } else {
+      ul.removeClass('cambia-color');
+    }
+  });
+});
+jQuery(document).ready(function($) {
+  $(window).scroll(function() {
+    var scrollPos = $(window).scrollTop(),
+        a = $('.hm-lk');
+    if (scrollPos > 20) {
+      a.addClass('cambia-color');
+    } else {
+      a.removeClass('cambia-color');
+    }
+  });
+});
 

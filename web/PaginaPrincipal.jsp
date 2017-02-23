@@ -26,7 +26,7 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/iconos.css">
         <link rel="stylesheet" href="css/menu.css">
-        <link rel="stylesheet" href="css/principal.css">
+
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo_K0RY7FwMSRhdDO1lSnfsmea6iPWetI"></script>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         
@@ -61,7 +61,7 @@
                                if (r.next()){
                                     String NameUs = r.getString("NombreUsuario");
                                  %>
-         <nav class="navbar navbar-fixed-top colorito">
+         <nav class="navbar navbar-fixed-top color">
           <div class="container-fluid">
               
             <div class="navbar-header">
@@ -74,12 +74,9 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right enlaces">
-                <li><a href="perfil.jsp"> <% 
+                <li><a href="perfil.jsp"><span class="glyphicon glyphicon-user"></span> <% 
                     out.println(NameUs); 
                    %> </a></li>
-                <li> 
-                    <a href="buscarperros.jsp"><button class="btn culbtn2 buscarD"><img src="img/perrx.png" alt="#" >&nbsp;<span class='glyphicon glyphicon-search' ></span></button></a>        
-                </li>
                 <li> <form action="buscarcentro.jsp" method="post" class="navbar-form navbar-left"> 
                         <div class="input-group">
                             <input type="text" class="form-control campo" id="center" name="center" placeholder="Buscar centros" autocomplete="off" required>
@@ -148,13 +145,89 @@
                 }
             }
                     %>
-                    
-    <br><br> <br><br><br>                   
-                    <div>
-                        <a href="#" data-toggle="modal" data-target="#filtross"><button>perro</button></a>
-                    </div>
+                     
+      <div class="container-fluid ppIMG" id="hola">
+            <br> <br> <br> <br>
+                        <div class="col-xs-3 col-sm-3 col-md-4 col-lg-4">
+                            <br> <br>
+                            <a href="#" data-toggle="modal" data-target="#filtross">
+                                <button class="btn culbtn3"> Encuentra mi perro ideal!</button>
+                            </a>
+                        </div>
+                       <div class="col-xs-9 col-sm-9 col-md-8 col-lg-8">
+                            <img src="img/ppiax.png" class="img-responsive img2" alt="#">
+                        </div>
+        </div>
+                
+            <div class="modal fade centrado" id ="filtross">    
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <form action="index.jsp" class="form-horizontal" method="post">
+                  <div class="modal-header colors">
+                    <button class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title"><span class="glyphicon glyphicon-filter"></span>Filtros de búsqueda</h3>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-lg-offset-1">
+                            <span class="glyphicon glyphicon-leaf"></span> Hembra
+                            <input type ="radio" name="sex" value="Hembra" checked>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4"> 
+                            <span class="glyphicon glyphicon-fire"></span> Macho
+                            <input type ="radio" name="sex" value="Macho"> 
+                        </div>
+                     </div>
+                      <div class="form-group">
+                        <label for="Edad" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-1 col-lg-1 col-lg-offset-2">Edad</label>
+                        <select name="edad" class="col-xs-8 col-xs-offset-2 col-sm-8  col-sm-offset-2 col-md-4 col-lg-4">
+                            <option value="Cachorro">Cachorro</option>
+                            <option value="Adulto">Adulto</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="Tamaño" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-1 col-lg-1 col-lg-offset-2">Tamaño</label>
+                        <select name="edad" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-4 col-lg-4">
+                            <option value="Chico">Raza chica</option>
+                            <option value="Mediano">Raza mediana</option>
+                            <option value="Grande">Raza grande</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="colors" class="col-xs-8 col-xs-offset-2 col-sm-8  col-sm-offset-2 col-md-1 col-lg-1 col-lg-offset-2">Color</label> 
+                            <div> 
+                                 <label for="colorb" class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-1 col-lg-1 col-lg-offset-1">Blanco</label>
+                                <input type ="checkbox" name="color" value="Blanco" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1"> 
+                            </div> 
+                            <div>
+                                 <label for="colorn" class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-1 col-lg-1 col-lg-offset-1">Negro</label>
+                                <input type ="checkbox" name="color" value="Negro" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1">
+                            </div> 
+                      </div>
+                       <div class="form-group">  
+                           <label for="colors" class="col-xs-0 col-sm-1 col-sm-offset-2 col-md-1 col-lg-1 col-lg-offset-2"> &nbsp; </label> 
+                            <div>
+                                 <label for="colorc" class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-1 col-lg-1 col-lg-offset-1">Café</label>
+                                <input type ="checkbox" name="color" value="Café" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1">
+                            </div> 
+                            <div>
+                                 <label for="colorm" class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-1 col-lg-1 col-lg-offset-1">Mixto</label>
+                                <input type ="checkbox" name="color" value="Mixto" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1">
+                            </div> 
+                       </div>   
+                      <p> O si lo prefieres también encuentra <a href="#"> perros por centros </a> </p> 
+                  </div>
+                 <div class="modal-footer">
+                    <input type='submit' name='busk' id='busk' class='btn culbtn2' value='Encuentra!'s>
+                    <button class="btn noculbtn" data-dismiss="modal"> Cancelar </button>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+
     <br>
-                    <div class="container" id="mapa" style="height: 400px;"></div>
+    <div class="container" id="mapa" style="height: 400px;"> </div>
                    
                     <script type="text/javascript">
 		
@@ -261,42 +334,33 @@
 			}
                    	
 		}
-
-		
-
-	</script>
-                    
-                    
-                    
-                
-            <div class="modal fade centrado" id ="filtross">    
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <form action="index.jsp" class="form-horizontal" method="post">
-                  <div class="modal-header colors">
-                    <button class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
-                    <h3 class="modal-title"><span class="glyphicon glyphicon-filter"></span>Filtros de búsqueda</h3>
-                  </div>
-                  <div class="modal-body">
-                      <div class="form-group">
-                      </div>
-                      <div class="form-group">
-                      </div>
-                      <div class="form-group">
-                      </div>
-                      <div class="form-group">
-                      </div>
-                      
-                      
-                  </div>
-                 <div class="modal-footer">
-                    <input type='submit' name='busk' id='busk' class='btn culbtn' value='Encuentra!'s>
-                    <button class="btn noculbtn" data-dismiss="modal"> Cancelar </button>
-                  </div>
-                </form>
-                </div>
-              </div>
+	</script> 
+        <br>
+        <div class="container bahh" id="tips">
+            <h1 class="titleh1 col-lg-offset-3"> ¿Estas pensando en adoptar un perro? <p class="tipss col-lg-offset-2"> <span class="glyphicon glyphicon-heart-empty"></span> PUNTOS A CONSIDERAR  <span class="glyphicon glyphicon-heart-empty"></span></p> </h1> 
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Porqué quieres compartir tu vida con un animal? </p>
+            <br>
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Tienes tiempo?  </p>
+            <br>
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Puedes permitirte económicamente una adopción? </p>
+            <br>
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Puedes tener uno en el lugar donde vives? </p>
+            <br>
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Son tus hábitos de vida adecuados para el animal que tienes en mente  </p>
+        </div>
+        <HR class="line" noshade="noshade"/>
+        <footer>
+        <div class="container-fluid creditos">
+            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 navbar-brand"><p>LynxCanine™</p></div>
+            <div class="col-xs-9 col-xs-offset-3 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 creditosR">
+                <a href="https://www.facebook.com/literariathegame" class="navbar-brand"><span class="icon icon-facebook facebook"></span></a>
+                <a href="https://twitter.com/literariagame" class="navbar-brand"><span class="icon icon-twitter twitter"></span></a>
+                <a href="https://www.youtube.com/channel/UCzl2Wzu738n6v8LicLgdfxA" class="navbar-brand"><span class="icon icon-youtube2 youtube"></span></a>
             </div>
+            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 navbar-brand"> <span class="glyphicon glyphicon-envelope"> </span> Contacto: dogsandco.lc@gmail.com</div> 
+        </div>
+        </footer>
+        
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
