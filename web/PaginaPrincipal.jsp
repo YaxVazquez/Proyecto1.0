@@ -151,7 +151,7 @@
                         <div class="col-xs-3 col-sm-3 col-md-4 col-lg-4">
                             <br> <br>
                             <a href="#" data-toggle="modal" data-target="#filtross">
-                                <button class="btn culbtn3"> Encuentra mi perro ideal!</button>
+                                <button class="btn culbtn3"> Encuentra mi perro ideal</button>
                             </a>
                         </div>
                        <div class="col-xs-9 col-sm-9 col-md-8 col-lg-8">
@@ -215,7 +215,7 @@
                                 <input type ="checkbox" name="color" value="Mixto" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1">
                             </div> 
                        </div>   
-                      <p> O si lo prefieres también encuentra <a href="#"> perros por centros </a> </p> 
+                      <p> O si lo prefieres también encuentra <a href="CentroPerros.jsp"> perros por centros </a> </p> 
                   </div>
                  <div class="modal-footer">
                     <input type='submit' name='busk' id='busk' class='btn culbtn2' value='Encuentra!'s>
