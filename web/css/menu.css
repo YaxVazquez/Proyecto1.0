@@ -336,3 +336,20 @@ src: url(font/personality.ttf);
     font-size: 30px;
     font-weight: bolder;
 }
+.bbl{
+    height: 1px;
+    width: 10%;
+}
+.colorito{
+    background-color: #f0ad73;   
+}
+.bugg{
+    background-color: #f0e195;
+    width: 100%;
+}
+.centrox22{
+    text-align: center;
+    font-size: 30px;
+    font-family: Lane;
+    background-image: url('imgs/perri-tu.jpg');
+}

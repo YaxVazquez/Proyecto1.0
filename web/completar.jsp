@@ -71,11 +71,11 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right enlaces">
-                <li><a href="perfil.jsp"> <% 
+                <li><a href="perfil.jsp"> <span class='glyphicon glyphicon-user'></span> <% 
                     out.println(NameUs); 
                    %> </a></li>
                 <li> 
-                    <a href="buscarperros.jsp"><button class="btn culbtn2 buscarD"><img src="img/perrx.png" alt="#" >&nbsp;<span class='glyphicon glyphicon-search' ></span></button></a>        
+                    <a href="" data-toggle="modal" data-target="#filtross"><span class='glyphicon glyphicon-search' ></span> Busca tu perro ideal &nbsp;</a>        
                 </li>
                 <li> <form action="buscarcentro.jsp" method="post" class="navbar-form navbar-left"> 
                         <div class="input-group">
@@ -198,6 +198,73 @@
                        }
                 }
                     %>
+                    
+                    <div class="modal fade centrado" id ="filtross">    
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <form action="ListaPerros.jsp" class="form-horizontal" method="post">
+                  <div class="modal-header colors">
+                    <button class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
+                    <h3 class="modal-title"><span class="glyphicon glyphicon-filter"></span>Filtros de búsqueda</h3>
+                  </div>
+                  <div class="modal-body">
+                      <div class="form-group">
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4 col-lg-offset-1">
+                            <span class="glyphicon glyphicon-leaf"></span> Hembra
+                            <input type ="radio" name="sex" value="Hembra" checked>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4"> 
+                            <span class="glyphicon glyphicon-fire"></span> Macho
+                            <input type ="radio" name="sex" value="Macho"> 
+                        </div>
+                     </div>
+                      <div class="form-group">
+                        <label for="Edad" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-1 col-lg-1 col-lg-offset-2">Edad</label>
+                        <select name="edad" class="col-xs-8 col-xs-offset-2 col-sm-8  col-sm-offset-2 col-md-4 col-lg-4">
+                            <option value="Cachorro">Cachorro</option>
+                            <option value="Adulto">Adulto</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="Tamaño" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-1 col-lg-1 col-lg-offset-2">Tamaño</label>
+                        <select name="tamano" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-4 col-lg-4">
+                            <option value="Chico">Raza chica</option>
+                            <option value="Mediano">Raza mediana</option>
+                            <option value="Grande">Raza grande</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                         <label for="colors" class="col-xs-8 col-xs-offset-2 col-sm-8  col-sm-offset-2 col-md-1 col-lg-1 col-lg-offset-2">Color</label> 
+                            <div> 
+                                 <label for="colorb" class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-1 col-lg-1 col-lg-offset-1">Blanco</label>
+                                <input type ="checkbox" name="color" value="Blanco" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1"> 
+                            </div> 
+                            <div>
+                                 <label for="colorn" class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-1 col-lg-1 col-lg-offset-1">Negro</label>
+                                <input type ="checkbox" name="color" value="Negro" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1">
+                            </div> 
+                      </div>
+                       <div class="form-group">  
+                           <label for="colors" class="col-xs-0 col-sm-1 col-sm-offset-2 col-md-1 col-lg-1 col-lg-offset-2"> &nbsp; </label> 
+                            <div>
+                                 <label for="colorc" class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-1 col-lg-1 col-lg-offset-1">Café</label>
+                                <input type ="checkbox" name="color" value="Café" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1">
+                            </div> 
+                            <div>
+                                 <label for="colorm" class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-1 col-lg-1 col-lg-offset-1">Mixto</label>
+                                <input type ="checkbox" name="color" value="Otro" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1">
+                            </div> 
+                       </div>   
+                      <p> O si lo prefieres también encuentra <a href="CentroPerros.jsp"> perros por centros </a> </p> 
+                  </div>
+                 <div class="modal-footer">
+                    <input type='submit' name='busk' id='busk' class='btn culbtn2' value='Encuentra!'s>
+                    <button class="btn noculbtn" data-dismiss="modal"> Cancelar </button>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>

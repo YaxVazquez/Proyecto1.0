@@ -1,11 +1,22 @@
 <%-- 
-    Document   : contraseña
-    Created on : 27/11/2016, 09:21:34 AM
+    Document   : detallescentro
+    Created on : 22/02/2017, 10:48:52 PM
     Author     : Yax
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*, java.io.*"%>
+<%@page import="classes.ProductosIMG"%>
+<%@page import="classes.Productos"%>
+<%@page import="classes.ProductosDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+ <%
+        ProductosDAO p = new ProductosDAO();
+        ProductosIMG m = new ProductosIMG();
+                                        String centro = request.getParameter("center2");
+            %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -15,7 +26,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Cambiar contraseña - Dogs & Co</title>
+        <title><%out.println(centro);%>- Dogs & Co</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="img/holi.ico" />
@@ -24,30 +35,9 @@
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/iconos.css">
         <link rel="stylesheet" href="css/menu.css">
+        <link rel="stylesheet" href="css/cssd.css">
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-                <script type="text/javascript">
-        <!--
-        function contra(e){
-            var x = e.which || e.keyCode;
-            if((x>=97 && x<=122) || (x>=65 && x<=90) || (x===8|| x ===224 || x ===232|| x===236|| x===242||x===249||x===241) || (x>=48&&x<=57)||(x===8))
-                return true;
-            else
-                return false;
-        }
-            function validar(contra, repeticion){
-                var contraa = contra.value;
-                var repetirr = repeticion.value;
-                    if(contraa!==repetirr){
-                        document.getElementById("con").style.visibility="visible";
-                        contra.focus();
-                        return false;
-                }
-                else
-                    document.getElementById("texti").style.visibility='hidden';
-            }
-        -->
-        </script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -64,7 +54,6 @@
                             Connection c = null;
                             Statement s = null;
                             ResultSet r = null;
-                            PreparedStatement ps = null;
 
                             try {
                                 Class.forName("com.mysql.jdbc.Driver").newInstance();
@@ -78,12 +67,11 @@
                             try {
                                r = s.executeQuery("select * from Usuario where Correo ='"+ emails +"';");
                                if (r.next()){
-                                    String NameUs = r.getString("NombreUsuario");
-                                 %>
+                                    String NameUs = r.getString("NombreUsuario");                                 %>
          <nav class="navbar colorito">
           <div class="container-fluid">
               
-            <div class="navbar-header colorito">
+            <div class="navbar-header">
               <button class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="icon-bar hm-icon"></span>
                 <span class="icon-bar hm-icon"></span>
@@ -101,7 +89,7 @@
                 </li>
                 <li> <form action="buscarcentro.jsp" method="post" class="navbar-form navbar-left"> 
                         <div class="input-group">
-                            <input type="text" class="form-control campo" id="center" name="center" placeholder="Buscar centros" autocomplete="off" required>
+                            <input type="text" class="form-control campo" id="center" name="center" value="<%out.println(centro);%>" placeholder="Buscar centros" autocomplete="off" required>
                             <span class="input-group-btn culbtn">
                                 <input type="submit" class="btn" value="Buscar" id="Buscar" name="Buscar">
                             </span>
@@ -119,93 +107,48 @@
             </ul>
             </div>  
           </div>
-        </nav>
-         
-        <div class="container centrado">
-            <form action="contraseña.jsp" class="form-horizontal" method="post">
-                  <div>
-                    <h3>Cambiar contraseña</h3>
-                  </div>
-                  <div class="datox"> 
-                      <div id='skambios' class='snc'>
-                          Tienes que usar una contraseña diferente*
-                      </div>
-                      <div id='conuu' class='snc'>
-                          Las contraseña anterior es incorrecta*
-                      </div>
-                      <div class="form-group">
-                        <label for="Contraseña" class="col-xs-12 col-sm-12 col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-3 control-label">Contraseña antigua</label>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <input type="password" class="form-control" name="contraxVieja" id="contraxVieja" placeholder="Contraseña antigua" autocomplete='off' onkeypress='return contra(event)' title="Utiliza solo letras, numeros y - _. Más de 4 caracteres, menos de  20" pattern="[a-zA-Z0-9-_ ]{4,20}" required>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="Contraseña" class="col-xs-12 col-sm-12 col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-3 control-label">Contraseña nueva</label>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <input type="password" class="form-control" name="contrax" id="contrax" placeholder="Contraseña nueva" autocomplete='off' onkeypress='return contra(event)' title="Utiliza solo letras, numeros y - _. Más de 4 caracteres, menos de  20" pattern="[a-zA-Z0-9-_ ]{4,20}" required>
-                        </div>
-                      </div>
-                    <div class="form-group">
-                        <label for="Repetir" class="col-xs-12 col-sm-12 col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-3 control-label">Confirmar nueva</label>
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                          <input type="password" class="form-control" name="conf" id="conf" placeholder="Confirmar contraseña nueva" autocomplete='off' pattern="[a-zA-Z0-9-_ ]{4,20}" required>
-                        </div>
-                    </div>
-                    <div id='con' class='snc'>
-                        Las contraseñas no coinciden*
-                    </div>
-                 </div>
-                 <div>
-                     <br> 
-                    <input type='submit' name='cambios' id='cambios' class='btn culbtn2' value='Cambiar!' onClick='return validar(contrax, conf);'>
-                 </div>
-                </form>
-            <br>
-                <a href="PaginaPrincipal.jsp"> <button class="btn noculbtn"><span class='glyphicon glyphicon-trash'></span>Cancelar</button> </a>
-            </div>
-        <%       
+        </nav> 
+            <%              if(request.getParameter("perfils") != null){
+                               try {
+                                    r = s.executeQuery("select * from centro join direccioncentro join Perro join Fotos where Fotos.IdPerro= perro.IdPerro and centro.IdDireccion = direccioncentro.IdDireccion and centro.IdCentro = Perro.IdCentro and NombreCentro = '"+centro+"';");
+                                    if (r.next()){
+                                        String NameCe = r.getString("NombreCentro");
+                                        String UserC = r.getString("Usuario");
+                                        String descripcion = r.getString("Descripcion");
+                                        String tel = r.getString("Telefono");
+                                        String correo = r.getString("Correo");
+                                        
+                                        String calle = r.getString("Calle");
+                                        String numi = r.getString("NumInt");
+                                        String nume = r.getString("NumExt");
+                                        String cp = r.getString("Cp");
+                                        String colo = r.getString("Colonia");
+                                        String dele = r.getString("Delegacion");
+                                        String estado = r.getString("Estado");
+                                        
+                                        out.println("<div class='container centrox22'>  <figure class='fig-profile wow fadeIn col-lg-offset-3' style='visibility: visible; animation-name: fadeIn;'>"
+                    + "&nbsp; &nbsp;&nbsp; &nbsp;<img class='img-responsive img-circle img-profile' src='img/Walk.jpg'> "
+                    + "</figure><h2>" + NameCe + "</h2>"
+                                                + "@"+UserC+ "<br><br>"
+                                                        + "<span class='glyphicon glyphicon-earphone'> </span>Telefono: " +tel+ "<br>"
+                                                + "<span class='glyphicon glyphicon-envelope'> </span>Correo: " +correo + "<br>"
+                                                + "Descripcion:" + descripcion+ "</br>"
+                                                + "<span class='glyphicon glyphicon-home'></span> Calle " + calle+ " "+numi +", Colonia "+colo+", "+dele+", "+cp+", "+estado+"<br> <br>"
+                                                + "</div> <br>");
+                                    }
                                }
-                            }
-                            catch (SQLException error){
-                                out.print(error.toString());
-                            }
-        if(request.getParameter("cambios") != null){
-
-            try{
-                r = s.executeQuery("select * from Usuario where Correo='"+emails+"';");
-                if(r.next()){
-                    String idd = request.getParameter("contraxVieja");
-                    String con = r.getString("Contraseña"); //parametro de la base
-                    String coni = request.getParameter("contrax");
-                    String conN = request.getParameter("conf");
-                    
-                    if(idd.equals(con)){
-                                out.println("<script> document.getElementById('conuu').style.visibility='hidden';</script>");
-                                if(con.equals(coni)){
-                                    out.println("<script> document.getElementById('skambios').style.visibility='visible';</script>");
-                                }
-                                else{
-                                 String queryString="update Usuario set Contraseña ='"+conN+"' where Correo= '"+emails+"' ;";
-                                 ps=c.prepareStatement(queryString);
-                                 ps.executeUpdate();
-                                 out.println("<script> document.getElementById('skambios').style.visibility='hidden';</script>");
-                                    out.println("<meta http-equiv='refresh' content='.0000001;URL=http://localhost:8080/Proyecto1.0/PaginaPrincipal.jsp'/>");
-                                }
-                       }
-                       else {
-                           out.println("<script> document.getElementById('conuu').style.visibility='visible';</script>");
-                       }
-                    
+                               catch (SQLException error){
+                                    out.print(error.toString());
+                               }
+                        } 
+                    }
                 }
-            }
                 catch (SQLException error){
-                            out.print(error.toString());
+                    out.print(error.toString());
                 }
-            }
-          
                     %>
                     
-                    <div class="modal fade centrado" id ="filtross">    
+                     <div class="modal fade centrado" id ="filtross">    
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <form action="ListaPerros.jsp" class="form-horizontal" method="post">
@@ -271,6 +214,76 @@
                 </div>
               </div>
             </div>
+                    
+         <div class="container-fluid ppIMG" id="juas">
+                          <div style="text-align: center; margin-top: 150px;">
+                              <h1 style=" color:white;text-shadow: 1px 1px 0 #000000, -1px -1px #000000, 1px -1px #000000, -1px 1px #000000, 0 1px #000000, 1px 0 #000000, -1px 0 #000000, 0 -1px #000000;">Selecciona el centro</h1>
+                              <form action="detallescentro.jsp" method="post">
+                              <% 
+                              
+                              if(request.getParameter("ok") !=null ){
+                              r = s.executeQuery("select * from Centro where NombreCentro='"+centro+"';");
+                              r.next();
+                              String idCentr=r.getString("idCentro");
+                              p.setId(idCentr);
+                                  
+                              }
+                              ArrayList<Productos> k = (ArrayList)p.BuscarTodos(); 
+    ArrayList<Productos> lis = (ArrayList)m.BuscarTodas();
+    ArrayList<String> nperros = new ArrayList<String>();
+                              %>
+                              
+                              <input type="submit" name="ok" value="Ver perros">
+                              </form>
+                          </div>
+                      </div>
+                                                                
+                              <div class="container" style="margin-top: 20px;">
+      <% out.println("<h1 style='text-align:center;'>Nombre del centro: "+centro+"</h1>");%>
+    <%for (int i = 0; i < k.size(); i++) {%>
+     
+        <div class="col-xs-12 col-sm-6 col-md-6">
+               <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img src="img/<%=lis.get(i).getRuta()%>" alt="" class="img-rounded img-responsive" />
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4> <%= k.get(i).getNombre()%></h4>
+                        <% nperros.add(i,k.get(i).getNombre() );%>
+                        <% String nombre=nperros.get(i); %>
+                        
+                                                <p>
+                            Color: <%=k.get(i).getCantidad()%>
+                            <br />
+                           Peso: <%=k.get(i).getPrecio()%> kg
+                            <br />
+                            Tamaño: <%=k.get(i).getRutaImagen()%>
+                            <br />
+                            Rango de edad: <%=k.get(i).getEdad()%>
+                            <br />
+                            Sexo: <%=k.get(i).getSex()%>
+                                                </p>
+                        <!-- Split button -->
+                        <div class="btn-group">
+                            
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Descrpción<span class="caret"></span><span class="sr-only">Descripción</span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><%=k.get(i).getDescripcion()%></li>
+                            </ul>
+                    </div>
+                       
+                </div>
+            </div>
+       </div>
+    </div>
+         <% }%>
+        
+         
+             </div>
+        
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>
         <script src="js/main.js"></script>

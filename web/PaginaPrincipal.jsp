@@ -77,6 +77,12 @@
                 <li><a href="perfil.jsp"><span class="glyphicon glyphicon-user"></span> <% 
                     out.println(NameUs); 
                    %> </a></li>
+                 <li> 
+                    <a href="" data-toggle="modal" data-target="#filtross"><span class='glyphicon glyphicon-search' ></span> Busca tu perro ideal &nbsp;</a>        
+                </li>
+                <li> 
+                    <a href="#mapa"><span class='glyphicon glyphicon-map-marker' ></span>Cercanos a mí</a>        
+                </li>
                 <li> <form action="buscarcentro.jsp" method="post" class="navbar-form navbar-left"> 
                         <div class="input-group">
                             <input type="text" class="form-control campo" id="center" name="center" placeholder="Buscar centros" autocomplete="off" required>
@@ -227,6 +233,33 @@
             </div>
 
     <br>
+    <div class="container" id="tips">
+            <h1 class="titleh1 col-lg-offset-3">  ¿Estas pensando en adoptar un perro? <p class="tipss col-lg-offset-2"> &nbsp; &nbsp; PUNTOS A CONSIDERAR</p> </h1> 
+            <hr class="bbl"> <span class="col-lg-offset-6 glyphicon glyphicon-heart"></span> <hr class="bbl"> 
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Porqué quieres compartir tu vida con un animal? </p>
+            <br>
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Tienes tiempo?  </p>
+            <br>
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Puedes permitirte económicamente una adopción? </p>
+            <br>
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Puedes tener uno en el lugar donde vives? </p>
+            <br>
+            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Son tus hábitos de vida adecuados para el animal que tienes en mente? </p>
+            <br>   
+    </div>
+    <br>
+    <div class="container bugg"> 
+        <br> 
+        <h1 class="titleh1 col-lg-offset-2"> ¡CENTROS DE ADOPCIÓN CERCANOS A TI! </h1> 
+        <p class="fraes col-lg-offset-1"> Ubica un centro cerca de tu domicilio, las etiquetas del perrito los representan.
+            Dale click y conoce el nombre, telefono y correo. 
+            <br> Si es que tienes la oportunidad, visita los centros, conoce su forma de trabajar.
+            <br> Hay muchas formas de ayudar. Puedes ser voluntario, ser hogar temporal, apadrinar a un perro, hacer una donación.
+            <br> O simplemente difunde con tus vecinos, amigos, en tus redes sociales. 
+            <br> ¡Haz que más gente se sume!</p>
+        <br>
+    </div>
+    <br>
     <div class="container" id="mapa" style="height: 400px;"> </div>
                    
                     <script type="text/javascript">
@@ -267,11 +300,13 @@
                         out.println("gMarkerDV"+i+".setIcon(image);");       
                                 
                         out.println("var objHTML= {");
-			out.println("content:\"<div style='height:150px;width:300px;'><h3>Centro "+lista.get(i).getNombre()+""
+			out.println("content:\"<div style='height:270px;width:400px;'> <form action='detallescentro.jsp' class='form-horizontal' method='post'> <h3 class='fraes'>Centro "+lista.get(i).getNombre()+""
                                 + "</h3><br>"
-                                + "<p><b>Teléfono:</b> "+ lista.get(i).getTelefono()+"</p><br>"
-                                + "<p><b>Correo:</b> "+ lista.get(i).getCorreo()+"</p></div>\"");		
-			out.println("}");	
+                                + "<p class='fraes'><b>Teléfono:</b> "+ lista.get(i).getTelefono()+"</p><br>"
+                                + "<p class='fraes'><b>Correo:</b> "+ lista.get(i).getCorreo()+"</p>"
+                                        + "<input type='submit' class='btn culbtn2' value='Ver' id='perfils' name='perfils'>"
+                                                + "</form></div>\"");
+                        out.println("}");
 			out.println("var gIW"+ i +"= new google.maps.InfoWindow(objHTML);");	
 			out.println("google.maps.event.addListener(gMarkerDV"+i+",'click', function(){gIW"+i+".open(gMap,gMarkerDV"+i+");})");	
 			out.println("}");
@@ -336,18 +371,6 @@
 		}
 	</script> 
         <br>
-        <div class="container bahh" id="tips">
-            <h1 class="titleh1 col-lg-offset-3"> ¿Estas pensando en adoptar un perro? <p class="tipss col-lg-offset-2"> <span class="glyphicon glyphicon-heart-empty"></span> PUNTOS A CONSIDERAR  <span class="glyphicon glyphicon-heart-empty"></span></p> </h1> 
-            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Porqué quieres compartir tu vida con un animal? </p>
-            <br>
-            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Tienes tiempo?  </p>
-            <br>
-            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Puedes permitirte económicamente una adopción? </p>
-            <br>
-            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Puedes tener uno en el lugar donde vives? </p>
-            <br>
-            <p class="fraes col-lg-offset-1"> <span class="glyphicon glyphicon-heart"></span>¿Son tus hábitos de vida adecuados para el animal que tienes en mente  </p>
-        </div>
         <HR class="line" noshade="noshade"/>
         <footer>
         <div class="container-fluid creditos">
