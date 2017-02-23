@@ -20,6 +20,7 @@ private String idPerro;
     private String edad;
     private String idCentro;
     private String sexo;
+    private int cuantos;
 
     /**
      * @return the idProductos
@@ -144,4 +145,5 @@ private String idPerro;
     public void setSex(String sexo) {
         this.sexo = sexo;
     }
+  
 }

@@ -162,7 +162,7 @@
             <div class="modal fade centrado" id ="filtross">    
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                  <form action="index.jsp" class="form-horizontal" method="post">
+                  <form action="ListaPerros.jsp" class="form-horizontal" method="post">
                   <div class="modal-header colors">
                     <button class="close" aria-hidden="true" data-dismiss="modal">&times;</button>
                     <h3 class="modal-title"><span class="glyphicon glyphicon-filter"></span>Filtros de búsqueda</h3>
@@ -187,7 +187,7 @@
                       </div>
                       <div class="form-group">
                         <label for="Tamaño" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-1 col-lg-1 col-lg-offset-2">Tamaño</label>
-                        <select name="edad" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-4 col-lg-4">
+                        <select name="tamano" class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-4 col-lg-4">
                             <option value="Chico">Raza chica</option>
                             <option value="Mediano">Raza mediana</option>
                             <option value="Grande">Raza grande</option>
@@ -212,7 +212,7 @@
                             </div> 
                             <div>
                                  <label for="colorm" class="col-xs-6 col-xs-offset-1 col-sm-6 col-sm-offset-1 col-md-1 col-lg-1 col-lg-offset-1">Mixto</label>
-                                <input type ="checkbox" name="color" value="Mixto" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1">
+                                <input type ="checkbox" name="color" value="Otro" class="col-xs-3 col-sm-3 col-md-1 col-lg-1 col-lg-offset-1">
                             </div> 
                        </div>   
                       <p> O si lo prefieres también encuentra <a href="CentroPerros.jsp"> perros por centros </a> </p> 
