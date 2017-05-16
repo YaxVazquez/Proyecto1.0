@@ -1,0 +1,162 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6/05/2017, 12:55:34 PM
+    Author     : Yax
+*/
+
+/* ==========================================================================
+   Yax's custom styles
+   ========================================================================== */
+@font-face {
+font-family:Hiruko;
+src: url(font/HirukoBlackAlternate.ttf);
+}
+@font-face {
+font-family:Lane;
+src: url(fonts/Antipasto-ExtraLightTrial.ttf);
+}
+@font-face {
+font-family:Sull;
+src: url(fonts/Sullivan.ttf);
+}
+@font-face {
+font-family:Futurama;
+src: url(fonts/FUTRFW.TTF);
+}
+.indexiso{
+    width: 100%;
+    text-align: center;
+}
+.indexiso a{
+    font-size: 28px;
+    font-family: Sull;
+    color: #000000;
+}
+.indexiso a:hover{
+    text-decoration: none;
+    outline: 0px;
+}
+.indexiso a:focus{
+    text-decoration: none;
+    outline: 0px;
+}
+.party{
+    background-image: url('imgs/image.png');
+    text-align: center;
+}
+.dogs{
+    font-size:60px;
+    font-family: Futurama;
+}
+.dogs2{
+    font-size: 40px;
+    font-family: Futurama;
+}
+.dogs3{
+    font-size: 30px;
+    font-family: Futurama;
+}
+.partyy{
+    background-image: url('imgs/image.png');
+}
+.imglel{
+    width:60%;
+    box-shadow: 7px 7px 5px #999;
+    border-radius: 50px;
+}
+.logo{
+    width:100%;
+}
+.bae{
+    width: 100%;
+}
+.bae img{
+    width: 100%;
+    height: 100%;
+}
+.babys{
+    font-size: 40px;
+    text-align: center;
+}
+.pba{
+    font-size: 48px;
+    font-family: Sull;
+}
+.line{
+     height: 2px;
+     background-color: #999;
+     width: 40%;
+}
+.babisit{
+    font-family: Sull;
+    text-align: justify;
+    padding-left: 23px;
+    padding-right: 23px;
+    font-size: 35px;
+}
+.aparece{
+    font-size: 50px;
+}
+.aparece.cambia-color {
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    margin-top: 100px;
+    height: 120px;
+  }
+
+  to {
+    margin-top: 0px;
+    height: 60px;
+  }
+}
+.ir-arriba {
+	display:none;
+	padding:20px;
+	background:#FBD157;
+	font-size:18px;
+	color:#fff;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
+        top: auto;
+        border-radius: 50%;
+        box-shadow: 4px 4px 4px #5B5757;
+}
+.icon{
+    background-color: #919191;
+    color: white;
+    margin-right: 10px;
+    border-radius: 4px;
+    padding: 5px;
+}
+.genial{
+    text-align: center;
+    font-size: 25px;
+    font-family: Sull;
+    padding: 50px 0;
+}
+.nome{
+    font-size: 32px;
+    margin-bottom: 50px;
+    letter-spacing: 4px;
+}
+.genial a:hover{
+    text-decoration: none;
+    outline: 0px;
+}
+.letter{
+    font-family: Sull;
+    font-size: 40px;
+}
+.dogsand{
+    font-family: Futurama;
+    font-size: 23px;
+}

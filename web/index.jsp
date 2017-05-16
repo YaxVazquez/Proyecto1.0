@@ -68,6 +68,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right enlaces">
               <li><a href="#Ellos">¿Qué es Dogs&Co?</a></li>
+              <li><a href="LandingPage.html">Dogs&Co app</a></li>
               <li><a href="#" data-toggle="modal" data-target="#registro">Registrate</a></li>
               <li><a href="#" data-toggle="modal" data-target="#sesions">Inicia Sesión</a></li>
               <li><a href="#Contacto">Contactanos</a></li>
@@ -226,11 +227,13 @@
                <p class="hm-tl"> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;Cambia la vida de un perro</p>
             </div>
           </div>
-        </div> 
+        </div>
+        <br> <br>
 <div class="bad">
         <div class="container campos bad" id="Contacto">
-            <br> <br>
+            <br>
           <h1 class="hm-tl">Contacto</h1>
+          <br>
           <form action="index.jsp" class="form-horizontal">
             <div class="form-group">
               <label for="Nombre" class="col-xs-12 col-sm-12 col-md-1 col-lg-1">Nombre</label>
@@ -273,6 +276,7 @@
             <div class="form-group">
                 <input type='submit' name='contacto' id='contacto' class='btn culbtn' value='Enviar!'>
             </div>            
+            <br>
           </form>
         </div>
 </div>
@@ -389,14 +393,14 @@
             }
         %>
           <footer>
-        <div class="container-fluid creditos">
-            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 navbar-brand"><p>LynxCanine™</p></div>
+        <div class="creditos">
+            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 navbar-brand"> <p>LynxCanine™</p> </div>
             <div class="col-xs-9 col-xs-offset-3 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 creditosR">
-                <a href="https://www.facebook.com/literariathegame" class="navbar-brand"><span class="icon icon-facebook facebook"></span></a>
+                <a href="https://www.facebook.com/DogsAdnCoo" class="navbar-brand"><span class="icon icon-facebook facebook"></span></a>
                 <a href="https://twitter.com/literariagame" class="navbar-brand"><span class="icon icon-twitter twitter"></span></a>
                 <a href="https://www.youtube.com/channel/UCzl2Wzu738n6v8LicLgdfxA" class="navbar-brand"><span class="icon icon-youtube2 youtube"></span></a>
             </div>
-            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 navbar-brand"> <span class="glyphicon glyphicon-envelope"> </span> Contacto: dogsandco.lc@gmail.com</div> 
+            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 navbar-brand"> <span class="glyphicon glyphicon-envelope"> </span>dogsandco.lc@gmail.com</div> 
         </div>
         </footer>
     </body>

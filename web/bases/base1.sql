@@ -97,9 +97,3 @@ select * from usuario;
 select * from centro;
 select * from direccionusuario;
 select * from direccioncentro;
-
-#user
-call addUser (0,1, 'chris123','Christopher', 'Osornio', '123456', 'osorniochris@gmail.com', 0);
-call addCentro(0,'Se Busca Amor', 'Clemente Herrera','12345678', 'Adopta, ellos te necesitan', '5588774103', 
-'ayudandoamor@gmail.com', 'Orizaba 203, Roma Nte., 06700 Ciudad de Mexico, CDMX',
-'Orizaba','2', '203', '06700', 'Roma','Cuauhtemoc');

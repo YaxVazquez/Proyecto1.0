@@ -54,4 +54,41 @@ jQuery(document).ready(function($) {
     }
   });
 });
+jQuery(document).ready(function($) {
+  $(window).scroll(function() {
+    var scrollPos = $(window).scrollTop(),
+        div = $('.aparece');
+    if (scrollPos > 60) {
+      div.addClass('cambia-color');
+    } else {
+      div.removeClass('cambia-color');
+    }
+  });
+});
 
+$(document).ready(function(){
+	$('.ir-arriba').click(function(){
+		$('body, html').animate({
+			scrollTop: '0px'
+		}, 300);
+	});
+	$(window).scroll(function(){
+		if( $(this).scrollTop() > 0 ){
+			$('.ir-arriba').slideDown(300);
+		} else {
+			$('.ir-arriba').slideUp(300);
+		}
+	});
+ 
+});
+jQuery(document).ready(function($) {
+  $(window).scroll(function() {
+    var scrollPos = $(window).scrollTop(),
+        navbar = $('.colorx');
+    if (scrollPos > 20) {
+      navbar.addClass('cambia-color');
+    } else {
+      navbar.removeClass('cambia-color');
+    }
+  });
+});

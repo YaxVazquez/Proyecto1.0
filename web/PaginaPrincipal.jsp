@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="css/iconos.css">
         <link rel="stylesheet" href="css/menu.css">
 
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo_K0RY7FwMSRhdDO1lSnfsmea6iPWetI"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGyaNdstetbXtATNir6dVbKMHY159Qeu4"></script>
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
         
     </head>
@@ -224,7 +224,7 @@
                       <p> O si lo prefieres también encuentra <a href="CentroPerros.jsp"> perros por centros </a> </p> 
                   </div>
                  <div class="modal-footer">
-                    <input type='submit' name='busk' id='busk' class='btn culbtn2' value='Encuentra!'s>
+                    <input type='submit' name='busk' id='busk' class='btn culbtn2' value='Encuentra!'>
                     <button class="btn noculbtn" data-dismiss="modal"> Cancelar </button>
                   </div>
                 </form>
@@ -374,15 +374,16 @@
         <HR class="line" noshade="noshade"/>
         <footer>
         <div class="container-fluid creditos">
-            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 navbar-brand"><p>LynxCanine™</p></div>
+            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3  navbar-brand"><p>LynxCanine™</p></div>
             <div class="col-xs-9 col-xs-offset-3 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 creditosR">
                 <a href="https://www.facebook.com/literariathegame" class="navbar-brand"><span class="icon icon-facebook facebook"></span></a>
                 <a href="https://twitter.com/literariagame" class="navbar-brand"><span class="icon icon-twitter twitter"></span></a>
                 <a href="https://www.youtube.com/channel/UCzl2Wzu738n6v8LicLgdfxA" class="navbar-brand"><span class="icon icon-youtube2 youtube"></span></a>
             </div>
-            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3 col-lg-offset-1 navbar-brand"> <span class="glyphicon glyphicon-envelope"> </span> Contacto: dogsandco.lc@gmail.com</div> 
+            <div class="col-xs-11 col-xs-offset-1 col-sm-11 col-md-4 col-lg-3 navbar-brand"> <span class="glyphicon glyphicon-envelope"> </span> Contacto: dogsandco.lc@gmail.com</div> 
         </div>
         </footer>
+        <br>
         
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/vendor/bootstrap.min.js"></script>

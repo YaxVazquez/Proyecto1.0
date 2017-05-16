@@ -221,13 +221,17 @@
                         <div class="btn-group">
                             
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                Descrpción<span class="caret"></span><span class="sr-only">Descripción</span>
+                                Descripción<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu">
                                 <li><%=k.get(i).getDescripcion()%></li>
                             </ul>
-                    </div>
-                       
+                        </div>
+                        <div class="btn-group"> 
+                            <form action='formato.jsp' method='post'>
+                                    <% out.println("<input type='submit' class='btn btn-success' value='Me interesa este perro ♥' name='meinteresa"+i+"'> </input>");%>
+                            </form>
+                        </div>
                 </div>
             </div>
        </div>

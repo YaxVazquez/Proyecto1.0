@@ -14,6 +14,7 @@
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/iconos.css">
         <link rel="stylesheet" href="css/estilos1.css">
 
         
@@ -24,32 +25,49 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <nav class="navbar navbar-default" >
+        <nav class="navbar navbar-fixed-top colos" >
           <div class="container-fluid" >
             <div class="navbar-header">
-              
-              <a href="#" class="navbar-brand" >Administrador </a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+              </button>
+              <p class="navbar-brand hm-lk"><span class="icon icon-paw"> </span> Administrador Dogs & Co.</p>
             </div>
-                </nav>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right enlaces">
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-info-sign"></span>Ayuda</a>
+                  <ul class="dropdown-menu enlaces2">
+                      <li><a href="">¡Quiero registrarme! <span class="glyphicon glyphicon-star invisible"></span> </a></li>
+                      <li class="divider"></li>
+                      <li><a href="index.jsp">Ir a página principal <span class="glyphicon glyphicon-star invisible"></span> </a></li>
+                      <li class="divider"></li>
+                      <li><a href="">FAQ  <span class="glyphicon glyphicon-star invisible"></span> </a> </li>
+                  </ul>
+              </li>
+            </ul>
+            </div>  
+          </div>
+       </nav>
             <div class="container">
-
-                <h2>Ingresa como adminstrador del centro</h2>
+                <br> <br> <br> <br>
+                <h2>Administrador del centro</h2>
                 <br>
                 <form class="form-horizontal" action='indexP.jsp' method='post'>
-                    <div class="form-group">
+                    <div class="form-group formi">
                         <label for="Usuario" class="col-sm-2 control-label">Usuario</label>
                         <div class="col-sm-10">
                             <input type="text" id="useri" name="useri" class="form-control"  placeholder="Usuario" required>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group formi">
                         <label for="Contraseña" class="col-sm-2 control-label">Contraseña</label>
                         <div class="col-sm-10">
                             <input type="password" id="contrasenia" name="contrasenia"class="form-control"  placeholder="Contraseña" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-10">
+                        <div class="col-sm-offset-2 col-sm-10 col-lg-offset-5 botoom">
                             <input type="submit" id="LoG" value="Ingresar" name="LoG" >
                         </div>
                     </div>
@@ -64,7 +82,6 @@
                 Statement s = null;
                 ResultSet r = null;
                 PreparedStatement ps = null;
-
                 try {
                     Class.forName("com.mysql.jdbc.Driver").newInstance();
                     c = DriverManager.getConnection("jdbc:mysql://localhost/doggos","root","n0m3l0");
@@ -73,7 +90,6 @@
                 catch (SQLException error){
                     out.print(error.toString());
                 }
-
                 try {
                    user = request.getParameter("useri");
                    conE = request.getParameter("contrasenia");
