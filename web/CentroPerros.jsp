@@ -237,6 +237,7 @@
                     </div>
                             <div class="btn-group"> 
                             <form action='formato.jsp' method='post'>
+                                 <% out.println("<input type='hidden' value='"+k.get(i).getNombre()+"' name='perrito'>"); %>
                                     <% out.println("<input type='submit' class='btn btn-success' value='Me interesa este perro ♥' name='meinteresa"+i+"'> </input>");%>
                             </form>
                         </div>

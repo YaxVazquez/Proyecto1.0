@@ -201,7 +201,7 @@
                         <img src="img/<%=lis.get(i).getRuta()%>" alt="" class="img-rounded img-responsive" />
                     </div>
                     <div class="col-sm-6 col-md-8">
-                        <h4> <%= k.get(i).getNombre()%></h4>
+                        <h4> <%= k.get(i).getNombre()%></h4> 
                         <% nperros.add(i,k.get(i).getNombre() );%>
                         <% String nombre=nperros.get(i); %>
                         
@@ -229,6 +229,7 @@
                         </div>
                         <div class="btn-group"> 
                             <form action='formato.jsp' method='post'>
+                                 <% out.println("<input type='hidden' value='"+k.get(i).getNombre()+"' name='perrito'>"); %>
                                     <% out.println("<input type='submit' class='btn btn-success' value='Me interesa este perro ♥' name='meinteresa"+i+"'> </input>");%>
                             </form>
                         </div>

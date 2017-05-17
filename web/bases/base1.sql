@@ -93,6 +93,24 @@ create table Administrador(IdAdministrador int(1) primary key not null,
 Tipo varchar(20),
 Clave blob);
 
+
+drop table if exists SolicitudAdopcion; 
+create table SolicitudAdopcion( IdSolicitud int(3) primary key not null,   
+idUsuario int(3),    
+idPerro int(3),   
+Casa varchar(10),  
+MayorEdad varchar(2),   
+Experiencia varchar(2),   
+OtrasMascotas varchar(2), 
+Finalidad varchar(30), 
+FamiliaInformada varchar(2),  
+Responsable varchar(30), 
+Tiempo varchar(2), 
+Lugar varchar(30), 
+PorQue varchar(30), 
+Visitas varchar(2), 
+Donativo varchar(2));
+
 select * from usuario;
 select * from centro;
 select * from direccionusuario;
