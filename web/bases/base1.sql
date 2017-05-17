@@ -95,7 +95,8 @@ Clave blob);
 
 
 drop table if exists SolicitudAdopcion; 
-create table SolicitudAdopcion( IdSolicitud int(3) primary key not null,   
+create table SolicitudAdopcion( IdSolicitud int(3) primary key not null,  
+idCentro int(3), 
 idUsuario int(3),    
 idPerro int(3),   
 Casa varchar(10),  
@@ -115,3 +116,5 @@ select * from usuario;
 select * from centro;
 select * from direccionusuario;
 select * from direccioncentro;
+select * from solicitudadopcion;
+select count(*) from solicitudadopcion where idCentro;

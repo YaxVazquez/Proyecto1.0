@@ -301,6 +301,7 @@
                                      r = s.executeQuery("select * from Perro where Nombre ='"+request.getParameter("npe")+"';");
                                      r.next();
                                      String  idPe=r.getString("IdPerro");
+                                     String idCe=r.getString("idCentro");
                                      String cas= request.getParameter("casa");
                                      String mayor= request.getParameter("edad");
                                      String exper= request.getParameter("experiencia");
@@ -314,15 +315,15 @@
                                      String visits= request.getParameter("disp");
                                      String don= request.getParameter("dona");
                                      
-                                     try
-                {
-                                     String queryString="call addSolicitud('"+0+"','"+idUsu+"','"+idPe+"','"+cas +"','"+mayor+"', '"+exper+"', '"+mascot+"', '"+fina+"', '"+fam+"', '"+respo+"' , '"+tiemp+"'"
+                                     try {
+                                     String queryString="call addSolicitud('"+0+"','"+idCe+"','"+idUsu+"','"+idPe+"','"+cas +"','"+mayor+"', '"+exper+"', '"+mascot+"', '"+fina+"', '"+fam+"', '"+respo+"' , '"+tiemp+"'"
                                              + ", '"+lug+"' , '"+pq+"' , '"+visits+"' , '"+don+"');";
                                     pstatement=con.prepareStatement(queryString);
                                     pstatement.executeUpdate();
                                     out.println("<script>alert('Se ha enviado tu solicitud al centro responsable')</script>");
-                }
-                                     catch(Exception e)
+                out.println("<meta http-equiv='refresh' content='.0000001;URL=http://localhost:8080/Proyecto1.0/PaginaPrincipal.jsp'/>");
+                                     }                   
+                                     catch(Exception e)  
                         {
                             out.println(e.getLocalizedMessage());
                             e.printStackTrace();

@@ -62,6 +62,7 @@
               
               <li><a href="PerfilCentro.jsp">Perfil Centro</a></li>
                             <li><a href="#" data-toggle="modal" data-target="#registro">Agregar Perro</a></li>
+                            <li><a href="Solicitudes.jsp">Solicitudes de adopción</a></li> 
                             <li><a href="SalirP.jsp">Cerrar Sesión</a></li>
             </ul>
               

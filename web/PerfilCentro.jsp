@@ -75,6 +75,7 @@
               
               <li><a href="DogsCentro.jsp">Perros</a></li>
               <li><a href="#" data-toggle="modal" data-target="#cambiar">Modificar Datos</a></li>
+              <li><a href="Solicitudes.jsp">Solicitudes de adopción</a></li>
               <li><a href="SalirP.jsp">Cerrar Sesión</a></li>
             </ul>
               
