@@ -235,6 +235,11 @@
                                 <li><%=k.get(i).getDescripcion()%></li>
                             </ul>
                     </div>
+                            <div class="btn-group"> 
+                            <form action='formato.jsp' method='post'>
+                                    <% out.println("<input type='submit' class='btn btn-success' value='Me interesa este perro ♥' name='meinteresa"+i+"'> </input>");%>
+                            </form>
+                        </div>
                        
                 </div>
             </div>
