@@ -134,51 +134,78 @@
                 }
             }
                          %> 
+                         <form class="form-horizontal" action='formato.jsp' method='post'>
                          <div class="container-fluid">
-                             <h1 class='hm-lk2'> Formato de adopción</h1>
-                             <form class="form-horizontal">
+                              <h1 class='hm-lk2'> Formato de adopción</h1>
+                              <label for="perm" class="col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-4">Nombre del perro</label>
+                              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                         <% 
+                             String namep= request.getParameter("perrito");
+                         out.println("<input type='text' class='form-control' value='"+namep+"' name='nomm' disabled>"); 
+                         out.println("<input type='hidden' class='form-control' value='"+namep+"' name='npe'>");
+                         
+                         %>
+                         <br>
+                              </div>
+                         <label for="perm" class="col-xs-12 col-sm-12 col-md-1 col-md-offset-1 col-lg-4">Nombre del interesado</label>
+                              <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                         <% 
+                             
+                             r = s.executeQuery("select * from usuario where Correo ='"+sesion.getAttribute("user")+"';");
+                             r.next();
+                             String nameinte= r.getString("Nombre");
+                             String apeinte= r.getString("Apellido");
+                         out.println("<input type='text' class='form-control' value='"+nameinte+ " "+apeinte+"' name='nombreinteresdo' disabled>"); 
+                         %>
+                         <br>
+                              </div>
+                         </div>
+                            
+                         <div class="container-fluid">
+                            
+                             
                                  <div class="form-group">
                                    <label for="casa" class="col-xs-12 col-sm-12 col-md-3 col-md-offset-1 col-lg-3"> ¿Su casa es propia o rentada? </label>
                                     <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 col-lg-offset-1">
                                         Propia
-                                        <input type ="radio" name="cas" value="Propia" checked>
+                                        <input type ="radio" name="casa" value="Propia" checked>
                                     </div>
                                     <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2"> 
                                         Rentada
-                                        <input type ="radio" name="cas" value="Rentada"> 
+                                        <input type ="radio" name="casa" value="Rentada"> 
                                     </div>
                                  </div>
                                   <div class="form-group">
                                    <label for="edad" class="col-xs-12 col-sm-12 col-md-3 col-md-offset-1 col-lg-3"> ¿Eres mayor de edad? </label>
                                     <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 col-lg-offset-1">
                                         Si
-                                        <input type ="radio" name="ed" value="Si" checked>
+                                        <input type ="radio" name="edad" value="Si" checked>
                                     </div>
                                     <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2"> 
                                         No
-                                        <input type ="radio" name="ed" value="No"> 
+                                        <input type ="radio" name="edad" value="No"> 
                                     </div>
                                   </div>
                                  <div class="form-group">
                                    <label for="exp" class="col-xs-12 col-sm-12 col-md-3 col-md-offset-1 col-lg-3"> ¿Tiene experiencia con otros perros? </label>
                                     <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 col-lg-offset-1">
                                         Si
-                                        <input type ="radio" name="ex" value="Si" checked>
+                                        <input type ="radio" name="experiencia" value="Si" checked>
                                     </div>
                                     <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2"> 
                                         No
-                                        <input type ="radio" name="ex" value="No"> 
+                                        <input type ="radio" name="experiencia" value="No"> 
                                     </div>
                                   </div>
                                  <div class="form-group">
                                    <label for="masmas" class="col-xs-12 col-sm-12 col-md-3 col-md-offset-1 col-lg-3"> ¿Tiene otras mascotas? </label>
                                     <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2 col-lg-offset-1">
                                         Si
-                                        <input type ="radio" name="masc" value="Si" checked>
+                                        <input type ="radio" name="mascotas" value="Si" checked>
                                     </div>
                                     <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2"> 
                                         No
-                                        <input type ="radio" name="masc" value="No"> 
+                                        <input type ="radio" name="mascotas" value="No"> 
                                     </div>
                                   </div>
                                    <div class="form-group">
@@ -249,10 +276,63 @@
                                         <input type ="radio" name="dona" value="No"> 
                                     </div>
                                   </div>
-                                  <input type='submit' name='formato' id='formato' class='btn culbtn2 col-lg-offset-5' value='Listo!'>
+                                  <input type='submit' name='enviar' id='formato' class='btn culbtn2 col-lg-offset-5' value='Listo!'>
                                     <button class="btn noculbtn" > Cancelar </button>
-                             </form>
+                             
+                             <%
+                                 Connection con=null;
+           
+                                 PreparedStatement pstatement=null;
+               
+                
+                try {
+                    Class.forName("com.mysql.jdbc.Driver").newInstance();
+                    con = DriverManager.getConnection("jdbc:mysql://localhost/doggos","root","n0m3l0");
+                    s = con.createStatement();
+                }
+                catch (SQLException error){
+                    out.print(error.toString());
+                }
+                                 if(request.getParameter("enviar") != null){
+                                     r = s.executeQuery("select * from Usuario where Correo ='"+sesion.getAttribute("user")+"';");
+                                     r.next();
+                                     String idUsu=r.getString("idUsuario");
+                                     
+                                     r = s.executeQuery("select * from Perro where Nombre ='"+request.getParameter("npe")+"';");
+                                     r.next();
+                                     String  idPe=r.getString("IdPerro");
+                                     String cas= request.getParameter("casa");
+                                     String mayor= request.getParameter("edad");
+                                     String exper= request.getParameter("experiencia");
+                                     String mascot= request.getParameter("mascotas");
+                                     String fina= request.getParameter("resp");
+                                     String fam= request.getParameter("inn");
+                                     String respo= request.getParameter("encar");
+                                     String tiemp= request.getParameter("tim");
+                                     String lug= request.getParameter("caz");
+                                     String pq= request.getParameter("xqq");
+                                     String visits= request.getParameter("disp");
+                                     String don= request.getParameter("dona");
+                                     
+                                     try
+                {
+                                     String queryString="call addSolicitud('"+0+"','"+idUsu+"','"+idPe+"','"+cas +"','"+mayor+"', '"+exper+"', '"+mascot+"', '"+fina+"', '"+fam+"', '"+respo+"' , '"+tiemp+"'"
+                                             + ", '"+lug+"' , '"+pq+"' , '"+visits+"' , '"+don+"');";
+                                    pstatement=con.prepareStatement(queryString);
+                                    pstatement.executeUpdate();
+                                    out.println("<script>alert('Se ha enviado tu solicitud al centro responsable')</script>");
+                }
+                                     catch(Exception e)
+                        {
+                            out.println(e.getLocalizedMessage());
+                            e.printStackTrace();
+                        }
+                                     
+                                 }
+            
+                             %>
                              <br> <br>
                          </div>
+                         </form>
     </body>
 </html>
